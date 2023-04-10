@@ -5,11 +5,11 @@
         <a class="nav-link" href="javascript:void(0)">FAQ</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="#">Purchase Now</a>
+        <a class="nav-link" href="#">Acheter maintenant</a>
         </li>
     </ul>
 </div>
-    &copy; <span id="copy-year">2019</span> <a href="#">Al Araf IT Solutions</a>. All Rights Reserved.
+    &copy; <span id="copy-year">2019</span> <a href="#"></a>. All Rights Reserved.
     <script>
         var d = new Date();
         var year = d.getFullYear();

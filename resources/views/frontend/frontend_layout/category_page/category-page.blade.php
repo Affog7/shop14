@@ -4,20 +4,13 @@
 <div class="body-content outer-top-xs">
   <div class="container">
     <div class="row">
-      <div class="col-md-3 sidebar"> 
-        <!-- ================================== TOP NAVIGATION ================================== -->
-        @include('frontend.frontend_layout.body.side-menu')
-        <!-- /.side-menu --> 
-        <!-- ================================== TOP NAVIGATION : END ================================== -->
-        @include('frontend.frontend_layout.category_page.shop-by-widget')
-        <!-- /.sidebar-module-container --> 
-      </div>
+      
       <!-- /.sidebar -->
       <div class="col-md-9"> 
         <!-- ========================================== SECTION – HERO ========================================= -->
         
         <div id="category" class="category-carousel hidden-xs">
-          <div class="item">
+          <!--div class="item">
             <div class="image"> <img src="{{ asset('frontend') }}/assets/images/banners/cat-banner-1.jpg" alt="" class="img-responsive"> </div>
             <div class="container-fluid">
               <div class="caption vertical-top text-left">
@@ -25,10 +18,8 @@
                 <div class="excerpt hidden-sm hidden-md"> Save up to 49% off </div>
                 <div class="excerpt-normal hidden-sm hidden-md"> Lorem ipsum dolor sit amet, consectetur adipiscing elit </div>
               </div>
-              <!-- /.caption --> 
-            </div>
-            <!-- /.container-fluid --> 
-          </div>
+             </div>
+           </div-->
         </div>
         
      
@@ -1218,6 +1209,15 @@
         
       </div>
       <!-- /.col --> 
+
+      <div class="col-md-3 sidebar"> 
+        <!-- ================================== TOP NAVIGATION ================================== -->
+        @include('frontend.frontend_layout.body.side-menu')
+        <!-- /.side-menu --> 
+        <!-- ================================== TOP NAVIGATION : END ================================== -->
+        @include('frontend.frontend_layout.category_page.shop-by-widget')
+        <!-- /.sidebar-module-container --> 
+      </div>
     </div>
     <!-- /.row --> 
     <!--  BRANDS CAROUSEL  -->

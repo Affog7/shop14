@@ -11,7 +11,7 @@
             <div class="col-md-12 col-lg-12">
                 <div class="box">
                     <div class="box-header with-border d-flex justify-content-between align-items-center">
-                        <h3 class="box-title">All Product Data Table</h3>
+                        <h3 class="box-title">TOUTE TABLEAU DE DONNÉES PRODUIT</h3>
                         <a href="{{ route('products.create') }}" class="btn btn-primary">Create New Product</a>
                     </div>
                     <!-- /.box-header -->
@@ -26,10 +26,10 @@
                                                 <tr role="row">
                                                     <th>#</th>
                                                     <th>Image</th>
-                                                    <th>Product Name EN</th>
-                                                    <th>Product Qty</th>
-                                                    <th>Purchase Price</th>
-                                                    <th>Selling Price</th>
+                                                    <th>Nom de produit FR</th>
+                                                    <th>Produit Qty</th>
+                                                    <th>Prix ​​d'achat</th>
+                                                    <th>Prix ​​de vente</th>
                                                     <th>Status</th>
                                                     <th>Action</th>
                                                 </tr>

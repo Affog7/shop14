@@ -1,7 +1,7 @@
 @extends('frontend.frontend_master')
 
 @section('title')
-    Al Araf Fashion - Cart Page
+     Fashion - Cart Page
 @endsection
 
 @section('frontend_content')
@@ -61,7 +61,7 @@
                                             <select class="form-control unicase-form-control selectpicker"
                                                 style="display: none;">
                                                 <option>--Select options--</option>
-                                                <option>India</option>
+                                                <option>France</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
@@ -69,7 +69,7 @@
                                             <select class="form-control unicase-form-control selectpicker"
                                                 style="display: none;">
                                                 <option>--Select options--</option>
-                                                <option>TamilNadu</option>
+                                                <option>Ile de France</option>
                                             </select>
                                         </div>
                                         <div class="form-group">

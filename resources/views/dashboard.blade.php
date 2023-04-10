@@ -18,7 +18,7 @@
         <div class="row">
                 @include('frontend.profile.user-sidebar')
             <div class="col-md-10">
-                Welcome To {{ env('APP_NAME') }} <strong>{{ Auth::user()->name }}</strong>
+                Bienvenu(e) sur {{ env('APP_NAME') }} <strong>{{ Auth::user()->name }}</strong>
                 @yield('userdashboard_content')
             </div>
         </div>

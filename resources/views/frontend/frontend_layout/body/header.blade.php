@@ -9,19 +9,19 @@
                             <li><a href="{{ route('dashboard') }}"><i class="icon fa fa-user"></i>আমার অ্যাকাউন্ট</a>
                             </li>
                         @else
-                            <li><a href="{{ route('dashboard') }}"><i class="icon fa fa-user"></i>My Account</a></li>
+                            <li><a href="{{ route('dashboard') }}"><i class="icon fa fa-user"></i>Mon compte</a></li>
                         @endif
-                        <li><a href="{{ route('listWishlist') }}"><i class="icon fa fa-heart"></i>Wishlist</a></li>
-                        <li><a href="{{ route('myCartView') }}"><i class="icon fa fa-shopping-cart"></i>My Cart</a></li>
+                        <li><a href="{{ route('listWishlist') }}"><i class="icon fa fa-heart"></i>Liste de souhaits</a></li>
+                        <li><a href="{{ route('myCartView') }}"><i class="icon fa fa-shopping-cart"></i>Mon Panier</a></li>
                         @auth
-                            <li><a href="{{ route('checkout-page') }}"><i class="icon fa fa-check"></i>Checkout</a></li>
+                            <li><a href="{{ route('checkout-page') }}"><i class="icon fa fa-check"></i>Vérifcation</a></li>
                         @endauth
 
                         <li>
                             @auth
-                                <a href="{{ route('user.logout') }}"><i class="icon fa fa-user"></i>User Logout</a>
+                                <a href="{{ route('user.logout') }}"><i class="icon fa fa-user"></i>Déconnexion</a>
                             @else
-                                <a href="{{ route('login') }}"><i class="icon fa fa-lock"></i>Login/Register</a>
+                                <a href="{{ route('login') }}"><i class="icon fa fa-lock"></i>S'identifier/S'enregistrer</a>
                             @endauth
                         </li>
                     </ul>
@@ -31,26 +31,24 @@
                 <div class="cnt-block">
                     <ul class="list-unstyled list-inline">
                         <li class="dropdown dropdown-small"> <a href="#" class="dropdown-toggle" data-hover="dropdown"
-                                data-toggle="dropdown"><span class="value">USD </span><b class="caret"></b></a>
+                                data-toggle="dropdown"><span class="value">EUR </span><b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">USD</a></li>
-                                <li><a href="#">INR</a></li>
-                                <li><a href="#">GBP</a></li>
+                                <li><a href="#">EUR</a></li>
                             </ul>
                         </li>
                         <li class="dropdown dropdown-small"> <a href="#" class="dropdown-toggle" data-hover="dropdown"
                                 data-toggle="dropdown"><span class="value">
                                     @if (session()->get('language') == 'bangla')
-                                        ভাষা:বাংলা
+                                       English
                                     @else
-                                        Lang: English
+                                        Lang: FRANCAIS
                                     @endif
                                 </span><b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 @if (session()->get('language') == 'bangla')
-                                    <li><a href="{{ route('english.language') }}">English</a></li>
+                                    <li><a href="{{ route('english.language') }}">FRANCAIS</a></li>
                                 @else
-                                    <li><a href="{{ route('bangla.language') }}">বাংলা</a></li>
+                                    <li><a href="{{ route('bangla.language') }}">English</a></li>
                                 @endif
                             </ul>
                         </li>
@@ -71,8 +69,9 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
                     <!--  LOGO  -->
-                    <div class="logo"> <a href="{{ route('home') }}"> <img
-                                src="{{ asset('frontend') }}/assets/images/logo.png" alt="logo"> </a> </div>
+                    <div class="logo"> <a href="{{ route('home') }}"> 
+                        <!--img src="{{ asset('frontend') }}/assets/images/logo.png" alt="logo"--> 
+                            </a> </div>
                     <!-- /.logo -->
                     <!--  LOGO : END  -->
                 </div>
@@ -82,9 +81,10 @@
                     <!-- /.contact-row -->
                     <!--  SEARCH AREA  -->
                     <div class="search-area">
-                        <form>
+                        <form method="POST" action="{{ route('product.s') }}">
+                            @csrf
                             <div class="control-group">
-                                <ul class="categories-filter animate-dropdown">
+                                <!--ul class="categories-filter animate-dropdown">
                                     <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown"
                                             href="category.html">Categories <b class="caret"></b></a>
                                         <ul class="dropdown-menu" role="menu">
@@ -99,9 +99,9 @@
                                                     href="category.html">- Watches</a></li>
                                         </ul>
                                     </li>
-                                </ul>
-                                <input class="search-field" placeholder="Search here..." />
-                                <a class="search-button" href="#"></a>
+                                </ul-->
+                                <input class="search-field" name="tag" placeholder="Rechercher ici..." />
+                                <button class="search-button" type="submit" href=""></button>
                             </div>
                         </form>
                     </div>
@@ -118,9 +118,9 @@
                             <div class="items-cart-inner">
                                 <div class="basket"> <i class="glyphicon glyphicon-shopping-cart"></i> </div>
                                 <div class="basket-item-count"><span class="count" id="cartQty"></span></div>
-                                <div class="total-price-basket"> <span class="lbl">cart -</span>
+                                <div class="total-price-basket"> <span class="lbl">Panier -</span>
                                     <span class="total-price">
-                                        <span class="sign">$</span>
+                                        <span class="sign">€</span>
                                         <span class="value" id="cartSubTotal"></span>
                                     </span>
                                 </div>
@@ -141,7 +141,7 @@
                                             class='price' id="cartSubTotal"></span> </div>
                                     <div class="clearfix"></div>
 
-                                    <a href="{{ route('checkout-page') }}" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a>
+                                    <a href="{{ route('checkout-page') }}" class="btn btn-upper btn-primary btn-block m-t-20">Paiement</a>
 
                                 </div>
                                 <!-- /.cart-total-->
@@ -184,7 +184,7 @@
                                         @if (session()->get('language') == 'bangla')
                                             হোম
                                         @else
-                                            Home
+                                            Accueil
                                         @endif
                                     </a>
                                 </li>
@@ -248,7 +248,7 @@
                                         </ul>
                                     </li>
                                 @endforeach
-                                <li class="dropdown  navbar-right special-menu"> <a href="#">Todays offer</a> </li>
+                                <li class="dropdown  navbar-right special-menu"> <a href="#">Offre du jour</a> </li>
                             </ul>
                             <!-- /.navbar-nav -->
                             <div class="clearfix"></div>

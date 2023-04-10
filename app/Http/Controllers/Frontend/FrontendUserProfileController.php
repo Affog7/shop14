@@ -7,7 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-
+use Image;
 class FrontendUserProfileController extends Controller
 {
     public function userdashboard()
@@ -45,13 +45,19 @@ class FrontendUserProfileController extends Controller
         $data->email = $request->email;
         $data->phone_number = $request->phone_number;
         if($request->file('image')){
+          
             $image_file = $request->file('image');
             if($data->profile_photo_path){
                 @unlink(public_path('storage/profile-photos/'.$data->profile_photo_path));
             }
-            $filename = date('YmdHi').'.'.$image_file->getClientOriginalExtension();
-            $image_file->move(public_path('storage/profile-photos'),$filename);
-            $data['profile_photo_path']= $filename;
+            
+              $upload_location = 'storage/profile-photos/';
+                $file = $request->file('image');
+                $name_gen =  date('YmdHi').'.'.$image_file->getClientOriginalExtension();
+
+                Image::make($file)->resize(600,600)->save($upload_location.$name_gen);
+             
+            $data['profile_photo_path']= $name_gen;
         }
         $data->save();
 

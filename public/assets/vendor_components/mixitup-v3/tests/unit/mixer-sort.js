@@ -213,7 +213,7 @@ describe('mixitup.Mixer', () => {
                     return mixer.sort('published', false);
                 })
                 .then(state => {
-                    // Order has not changed
+                    // Commande has not changed
 
                     chai.assert.deepEqual(state.targets, startOrder);
                     chai.assert.notEqual(state.targets[5].getAttribute('data-published'), newDate);
@@ -227,7 +227,7 @@ describe('mixitup.Mixer', () => {
                     return mixer.sort('published', false);
                 })
                 .then(state => {
-                    // Order has changed
+                    // Commande has changed
 
                     chai.assert.notDeepEqual(state.targets, startOrder);
                     chai.assert.equal(state.targets[5].getAttribute('data-published'), newDate);

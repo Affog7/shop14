@@ -12,7 +12,7 @@
             <div class="col-md-8 col-lg-8 m-auto">
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Edit State</h3>
+                        <h3 class="box-title">Modifier l'état(zone)</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -20,7 +20,7 @@
                             @method('PUT')
                             @csrf
                             <div class="form-group">
-                                <h5>Division Name <span class="text-danger">*</span></h5>
+                                <h5>Nom de la division <span class="text-danger">*</span></h5>
                                 <select class="custom-select" aria-label="Default select example" name="division_id">
                                     {{-- <option selected>Open this select menu</option> --}}
                                     @foreach ($divisions as $division)
@@ -32,7 +32,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <h5>District Name <span class="text-danger">*</span></h5>
+                                <h5>Nom du district<span class="text-danger">*</span></h5>
                                 <select class="custom-select" aria-label="Default select example" name="district_id">
                                     {{-- <option selected>Open this select menu</option> --}}
                                     @foreach ($districts as $district)
@@ -44,7 +44,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <h5>state Name <span class="text-danger">*</span></h5>
+                                <h5>Zone(état) Nom <span class="text-danger">*</span></h5>
                                 <div class="controls">
                                     <input type="text" name="state_name" class="form-control" required=""  value="{{old('state_name',$state->state_name) }}" data-validation-required-message="This field is required"> <div class="help-block"></div>
                                 </div>
@@ -53,7 +53,7 @@
                                 @enderror
                             </div>
                             <div class="text-xs-right">
-                                <button type="submit" class="btn btn-rounded btn-info">Update</button>
+                                <button type="submit" class="btn btn-rounded btn-info">Mise à jour</button>
                             </div>
                         </form>
                     </div>

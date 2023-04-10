@@ -85,7 +85,7 @@
         <td>
           <p class="font">
             <h3><span style="color: green;">Invoice:</span> #{{ $order->invoice_number }}</h3>
-            Order Date: {{ $order->created_at }} <br>
+            Commande Date: {{ $order->created_at }} <br>
             Delivery Date: {{ $order->delivered_date }} <br>
             Payment Type : {{ $order->payment_type }} <br>
             Payment Method: {{ $order->payment_method }}

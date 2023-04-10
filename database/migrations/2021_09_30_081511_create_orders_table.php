@@ -43,7 +43,7 @@ class CreateOrdersTable extends Migration
             $table->string('cancel_date')->nullable();
             $table->string('return_date')->nullable();
             $table->string('return_reason')->nullable();
-            $table->string('status')->default('pending');
+            $table->string('status')->default('En vérification');
             $table->timestamps();
         });
     }

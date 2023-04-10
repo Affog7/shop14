@@ -4,7 +4,7 @@
     @include('admin.dashboard_layout.breadcrumb', [
     'name' => 'Order Details',
     'url' => "orders.index",
-    'section_name' => 'View Order'
+    'section_name' => 'View Commande'
     ])
     <section class="content">
         <div class="row">
@@ -45,7 +45,7 @@
                                 <th> {{ $order->post_code }} </th>
                             </tr>
                             <tr>
-                                <th> Order Date : </th>
+                                <th> Commande Date : </th>
                                 <th> {{ $order->order_date }} </th>
                             </tr>
                         </table>
@@ -85,7 +85,7 @@
                                 <th class="text-danger"> {{ $order->invoice_number }} </th>
                             </tr>
                             <tr>
-                                <th> Order Total : </th>
+                                <th> Commande Total : </th>
                                 <th>$ {{ $order->amount }} </th>
                             </tr>
                             <tr>
@@ -98,36 +98,36 @@
                             <tr>
                                 <th>Return Reason: <p>{{ $order->return_reason }}</p></th>
                                 <th>
-                                    @if ($order->status == 'pending')
+                                    @if ($order->status == 'En vérification')
                                     <a href="{{ route('order-status.update', [
                                         'order_id' => $order->id,
                                         'status' => 'confirmed'
-                                    ]) }}" class="btn btn-block btn-success">Confirm Order</a>
+                                    ]) }}" class="btn btn-block btn-success">Confirm Commande</a>
                                     @elseif ($order->status == 'confirmed')
                                     <a href="{{ route('order-status.update', [
                                         'order_id' => $order->id,
-                                        'status' => 'processing'
-                                    ]) }}" class="btn btn-block btn-success">Process Order</a>
-                                    @elseif ($order->status == 'processing')
+                                        'status' => 'En cours'
+                                    ]) }}" class="btn btn-block btn-success">Process Commande</a>
+                                    @elseif ($order->status == 'En cours')
                                     <a href="{{ route('order-status.update', [
                                         'order_id' => $order->id,
-                                        'status' => 'picked'
-                                    ]) }}" class="btn btn-block btn-success">Pick Order</a>
-                                    @elseif ($order->status == 'picked')
+                                        'status' => 'Prise'
+                                    ]) }}" class="btn btn-block btn-success">Pick Commande</a>
+                                    @elseif ($order->status == 'Prise')
                                     <a href="{{ route('order-status.update', [
                                         'order_id' => $order->id,
-                                        'status' => 'shipped'
-                                    ]) }}" class="btn btn-block btn-success">Ship Order</a>
-                                    @elseif ($order->status == 'shipped')
+                                        'status' => 'expédiée'
+                                    ]) }}" class="btn btn-block btn-success">Ship Commande</a>
+                                    @elseif ($order->status == 'expédiée')
                                     <a href="{{ route('order-status.update', [
                                         'order_id' => $order->id,
-                                        'status' => 'delivered'
-                                    ]) }}" class="btn btn-block btn-success">Deliverd Order</a>
+                                        'status' => 'livrée'
+                                    ]) }}" class="btn btn-block btn-success">Deliverd Commande</a>
                                     @elseif ($order->status == 'cancel')
                                     <a href="{{ route('order-status.update', [
                                         'order_id' => $order->id,
-                                        'status' => 'return'
-                                    ]) }}" class="btn btn-block btn-danger">Return Order</a>
+                                        'status' => 'retournée'
+                                    ]) }}" class="btn btn-block btn-danger">Return Commande</a>
                                     @endif
                                 </th>
                             </tr>
@@ -204,7 +204,7 @@
                                             @endphp
 
                                             <td class="col-md-1">
-                                                @if ($order->status == 'pending')
+                                                @if ($order->status == 'En vérification')
                                                     <strong>
                                                         <span class="badge badge-pill badge-success" style="background: #418DB9;"> No
                                                             File</span> </strong>

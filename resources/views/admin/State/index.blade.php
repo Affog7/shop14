@@ -11,7 +11,7 @@
             <div class="col-md-8 col-lg-8">
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">All State Data Table</h3>
+                        <h3 class="box-title">TOUT TABLEAU DE DONNÉES D'ÉTAT</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -23,7 +23,7 @@
                                             role="grid" aria-describedby="example1_info">
                                             <thead>
                                                 <tr role="row">
-                                                    <th>State Name</th>
+                                                    <th>Zone Name</th>
                                                     <th>District Name</th>
                                                     <th>Division Name</th>
                                                     <th>Action</th>

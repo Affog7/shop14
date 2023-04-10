@@ -11,8 +11,8 @@
             <div class="col-md-12 col-lg-12">
                 <div class="box">
                     <div class="box-header with-border d-flex justify-content-between align-items-center">
-                        <h3 class="box-title">All Coupons Data Table</h3>
-                        <a href="{{ route('coupons.create') }}" class="btn btn-primary">Create New Coupon</a>
+                        <h3 class="box-title">Table de données de coupons</h3>
+                        <a href="{{ route('coupons.create') }}" class="btn btn-primary">Créer un nouveau coupon</a>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -25,10 +25,10 @@
                                             <thead>
                                                 <tr role="row">
                                                     <th>#</th>
-                                                    <th>Coupon Name</th>
-                                                    <th>Coupon Discount</th>
-                                                    <th>Coupon Validity</th>
-                                                    <th>Coupon Status</th>
+                                                    <th>Coupon Nom</th>
+                                                    <th>Coupon Rabais</th>
+                                                    <th>Coupon Validité</th>
+                                                    <th>Coupon Statut</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>

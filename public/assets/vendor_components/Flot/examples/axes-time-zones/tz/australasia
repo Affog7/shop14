@@ -1415,7 +1415,7 @@ Zone	Pacific/Wallis	12:15:20 -	LMT	1901
 # From Paul Eggert (1995-12-19);
 # Shank & Pottenger report 2:00 for all autumn changes in Australia and NZ.
 # Robert Uzgalis writes that the New Zealand Daylight
-# Savings Time Order in Council dated 1990-06-18 specifies 2:00 standard
+# Savings Time Commande in Council dated 1990-06-18 specifies 2:00 standard
 # time on both the first Sunday in October and the third Sunday in March.
 # As with Australia, we'll assume the tradition is 2:00s, not 2:00.
 #

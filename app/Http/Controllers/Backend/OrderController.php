@@ -101,7 +101,7 @@ class OrderController extends Controller
 
     public function pendingOrderIndex()
     {
-        $orders = Order::where('status', 'pending')->latest('id')->get();
+        $orders = Order::where('status', 'En vérification')->latest('id')->get();
         return view('admin.Orders.index', compact(
             'orders'
         ));
@@ -117,7 +117,7 @@ class OrderController extends Controller
 
     public function processingOrderIndex()
     {
-        $orders = Order::where('status', 'processing')->latest('id')->get();
+        $orders = Order::where('status', 'En cours')->latest('id')->get();
         return view('admin.Orders.index', compact(
             'orders'
         ));
@@ -125,7 +125,7 @@ class OrderController extends Controller
 
     public function pickedOrderIndex()
     {
-        $orders = Order::where('status', 'picked')->latest('id')->get();
+        $orders = Order::where('status', 'Prise')->latest('id')->get();
         return view('admin.Orders.index', compact(
             'orders'
         ));
@@ -133,7 +133,7 @@ class OrderController extends Controller
 
     public function shippedOrderIndex()
     {
-        $orders = Order::where('status', 'shipped')->latest('id')->get();
+        $orders = Order::where('status', 'expédiée')->latest('id')->get();
         return view('admin.Orders.index', compact(
             'orders'
         ));
@@ -141,7 +141,7 @@ class OrderController extends Controller
 
     public function deliveredOrderIndex()
     {
-        $orders = Order::where('status', 'delivered')->latest('id')->get();
+        $orders = Order::where('status', 'livrée')->latest('id')->get();
         return view('admin.Orders.index', compact(
             'orders'
         ));
@@ -156,7 +156,7 @@ class OrderController extends Controller
     }
     public function returnOrderIndex()
     {
-        $orders = Order::where('status', 'return')->latest('id')->get();
+        $orders = Order::where('status', 'retournée')->latest('id')->get();
         return view('admin.Orders.index', compact(
             'orders'
         ));
@@ -173,31 +173,31 @@ class OrderController extends Controller
                     'confirmed_date' => Carbon::now()->format('d F Y')
                 ]);
                 break;
-            case 'processing':
+            case 'En cours':
                 $order->update([
                     'status' => $status,
                     'processing_date' => Carbon::now()->format('d F Y')
                 ]);
                 break;
-            case 'picked':
+            case 'Prise':
                 $order->update([
                     'status' => $status,
                     'picked_date' => Carbon::now()->format('d F Y')
                 ]);
                 break;
-            case 'shipped':
+            case 'expédiée':
                 $order->update([
                     'status' => $status,
                     'shipped_date' => Carbon::now()->format('d F Y')
                 ]);
                 break;
-            case 'delivered':
+            case 'livrée':
                 $order->update([
                     'status' => $status,
                     'delivered_date' => Carbon::now()->format('d F Y')
                 ]);
                 break;
-            case 'return':
+            case 'retournée':
                 $order->update([
                     'status' => $status,
                     'return_date' => Carbon::now()->format('d F Y')

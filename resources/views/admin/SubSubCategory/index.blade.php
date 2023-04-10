@@ -11,7 +11,7 @@
             <div class="col-md-12 col-lg-12">
                 <div class="box">
                     <div class="box-header with-border d-flex justify-content-between align-items-center">
-                        <h3 class="box-title">All Sub-SubCategory Data Table</h3>
+                        <h3 class="box-title">Toute le tableau de données de la sous-sous-categorie</h3>
                         <a href="{{ route('subsubcategories.create') }}" class="btn btn-primary">Create New Sub-SubCategory</a>
                     </div>
                     <!-- /.box-header -->
@@ -25,7 +25,7 @@
                                             <thead>
                                                 <tr role="row">
                                                     <th>#</th>
-                                                    <th>Sub-SubCategory Name EN</th>
+                                                    <th>Sub-SubCategory Name FR</th>
                                                     <th>SubCategory Name</th>
                                                     <th>Category Name</th>
                                                     <th>Action</th>

@@ -4,7 +4,7 @@
     @include('admin.dashboard_layout.breadcrumb', [
     'name' => 'District',
     'url' => "district.index",
-    'section_name' => 'All District'
+    'section_name' => 'Tout les districts'
     ])
     <section class="content">
         <div class="row">
@@ -12,7 +12,7 @@
             <div class="col-md-8 col-lg-8 m-auto">
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Edit District</h3>
+                        <h3 class="box-title">Modification</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -20,7 +20,7 @@
                             @method('PUT')
                             @csrf
                             <div class="form-group">
-                                <h5>Division Name <span class="text-danger">*</span></h5>
+                                <h5>Nom de la division <span class="text-danger">*</span></h5>
                                 <select class="custom-select" aria-label="Default select example" name="division_id">
                                     {{-- <option selected>Open this select menu</option> --}}
                                     @foreach ($divisions as $division)
@@ -32,9 +32,9 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <h5>District Name <span class="text-danger">*</span></h5>
+                                <h5>Nom du district <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                    <input type="text" name="district_name" class="form-control" required=""  value="{{old('district_name',$district->district_name) }}" data-validation-required-message="This field is required"> <div class="help-block"></div>
+                                    <input type="text" name="district_name" class="form-control" required=""  value="{{old('district_name',$district->district_name) }}" data-validation-required-message="Ce champ est obligatoire"> <div class="help-block"></div>
                                 </div>
                                 @error('district_name')
                                     <span class="alert text-danger">{{ $message }}</span>

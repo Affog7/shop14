@@ -28,17 +28,17 @@
                     <td>{{ $order->amount }}</td>
                     <td>{{ $order->payment_method }}</td>
                     <td>
-                        @if ($order->status == 'pending')
+                        @if ($order->status == 'En vérification')
                         <span class="badge badge-primary">{{ $order->status }}</span>
                         @elseif ($order->status == 'confirmed')
                         <span class="badge badge-secondary">{{ $order->status }}</span>
-                        @elseif ($order->status == 'processing')
+                        @elseif ($order->status == 'En cours')
                         <span class="badge badge-info">{{ $order->status }}</span>
-                        @elseif ($order->status == 'picked')
+                        @elseif ($order->status == 'Prise')
                         <span class="badge badge-warning">{{ $order->status }}</span>
-                        @elseif ($order->status == 'shipped')
+                        @elseif ($order->status == 'expédiée')
                         <span class="badge badge-light">{{ $order->status }}</span>
-                        @elseif ($order->status == 'delivered')
+                        @elseif ($order->status == 'livrée')
                         <span class="badge badge-success">{{ $order->status }}</span>
                         @else
                         <span class="badge badge-danger">{{ $order->status }}</span>

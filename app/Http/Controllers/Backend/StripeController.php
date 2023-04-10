@@ -34,12 +34,12 @@ class StripeController extends Controller
         $charge = \Stripe\Charge::create([
         'amount' => $total_amount*100,
         'currency' => 'usd',
-        'description' => 'Al Araf Fashion Store',
+        'description' => ' Fashion Store',
         'source' => $token,
         'metadata' => ['order_id' => uniqid()],
         ]);
 
-        // Order Service Area
+        // Commande Service Area
         $order_id = Order::insertGetId([
             'user_id' => Auth::id(),
             'division_id' => $request->input('division_id'),
@@ -63,7 +63,7 @@ class StripeController extends Controller
             'order_date' => Carbon::now()->format('d F Y'),
             'order_month' => Carbon::now()->format('F'),
             'order_year' => Carbon::now()->format('Y'),
-            'status' => 'pending',
+            'status' => 'En vérification',
             'created_at' => Carbon::now(),
         ]);
 
@@ -103,7 +103,7 @@ class StripeController extends Controller
         Cart::destroy();
 
         $notification = array(
-			'message' => 'Your Order Place Successfully',
+			'message' => 'Your Commande Place Successfully',
 			'alert-type' => 'success'
 		);
 

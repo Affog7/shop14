@@ -58,7 +58,7 @@ jvm.MultiMap.prototype = {
         var multimap = e.data.scope,
             mapName = multimap.params.mapNameByCode(code, multimap);
 
-        if (!multimap.drillDownPromise || multimap.drillDownPromise.state() !== 'pending') {
+        if (!multimap.drillDownPromise || multimap.drillDownPromise.state() !== 'En vérification') {
           multimap.drillDown(mapName, code);
         }
       });
@@ -92,7 +92,7 @@ jvm.MultiMap.prototype = {
         downloadPromise = this.downloadMap(code);
 
     focusPromise.then(function(){
-      if (downloadPromise.state() === 'pending') {
+      if (downloadPromise.state() === 'En vérification') {
         that.spinner.show();
       }
     });

@@ -13292,7 +13292,7 @@ var EventPeriod = /** @class */ (function () {
     };
     EventPeriod.prototype.requestSource = function (source) {
         var _this = this;
-        var request = { source: source, status: 'pending', eventDefs: null };
+        var request = { source: source, status: 'En vérification', eventDefs: null };
         this.requestsByUid[source.uid] = request;
         this.pendingCnt += 1;
         source.fetch(this.start, this.end, this.timezone).then(function (eventDefs) {
@@ -13315,7 +13315,7 @@ var EventPeriod = /** @class */ (function () {
         var request = this.requestsByUid[source.uid];
         if (request) {
             delete this.requestsByUid[source.uid];
-            if (request.status === 'pending') {
+            if (request.status === 'En vérification') {
                 request.status = 'cancelled';
                 this.pendingCnt--;
                 this.tryRelease();
@@ -13332,7 +13332,7 @@ var EventPeriod = /** @class */ (function () {
         var completedCnt = 0;
         for (uid in requestsByUid) {
             request = requestsByUid[uid];
-            if (request.status === 'pending') {
+            if (request.status === 'En vérification') {
                 request.status = 'cancelled';
             }
             else if (request.status === 'completed') {

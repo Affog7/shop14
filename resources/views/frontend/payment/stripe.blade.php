@@ -1,7 +1,7 @@
 @extends('frontend.frontend_master')
 
 @section('title')
-    Al Araf Fashion - Stripe Page
+     Fashion - Stripe Page
 @endsection
 
 @section('frontend_style')

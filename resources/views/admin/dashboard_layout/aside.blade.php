@@ -11,11 +11,11 @@
 
     <div class="user-profile">
         <div class="ulogo">
-                <a href="index.html">
+                <a href="home">
                 <!-- logo for regular state and mobile devices -->
                     <div class="d-flex align-items-center justify-content-center">
-                        <img src="{{ asset('backend') }}/images/logo-dark.png" alt="">
-                        <h3><b>Al Araf Store</b> Admin</h3>
+                      <!--   <img src="{{ asset('backend') }}/images/logo-dark.png" alt="">-->
+                        <h3><b>SHOP</b> GESTION</h3>
                     </div>
             </a>
         </div>
@@ -32,38 +32,38 @@
     </li>
     <li class="treeview {{ Request::is('admin/orders*') ? 'active' : '' }}">
         <a href="#">
-        <i data-feather="file"></i> <span>Orders</span>
+        <i data-feather="file"></i> <span>COMMANDES</span>
         <span class="pull-right-container">
             <i class="fa fa-angle-right pull-right"></i>
         </span>
         </a>
         <ul class="treeview-menu">
             <li class=" {{ route('orders.index') ? 'active' : '' }}">
-                <a href="{{ route('orders.index') }}"><i class="ti-more"></i>All Orders</a>
+                <a href="{{ route('orders.index') }}"><i class="ti-more"></i>Toutes Commandes</a>
             </li>
             <li class=" {{ Request::is('admin/orders/pending') ? 'active' : '' }}">
-                <a href="{{ route('pending.orders') }}"><i class="ti-more"></i>Pending Orders</a>
+                <a href="{{ route('pending.orders') }}"><i class="ti-more"></i>En attente Commandes</a>
             </li>
             <li class=" {{ Request::is('admin/orders/confirmed') ? 'active' : '' }}">
-                <a href="{{ route('confirmed.orders') }}"><i class="ti-more"></i>Confirmed Orders</a>
+                <a href="{{ route('confirmed.orders') }}"><i class="ti-more"></i>Confirmé Commandes</a>
             </li>
             <li class=" {{ Request::is('admin/orders/processing') ? 'active' : '' }}">
-                <a href="{{ route('processing.orders') }}"><i class="ti-more"></i>Processing Orders</a>
+                <a href="{{ route('processing.orders') }}"><i class="ti-more"></i>Traitement Commandes</a>
             </li>
             <li class=" {{ Request::is('admin/orders/picked') ? 'active' : '' }}">
-                <a href="{{ route('picked.orders') }}"><i class="ti-more"></i>Picked Orders</a>
+                <a href="{{ route('picked.orders') }}"><i class="ti-more"></i>Choisie Commandes</a>
             </li>
-            <li class=" {{ Request::is('admin/orders/shipped') ? 'active' : '' }}">
-                <a href="{{ route('shipped.orders') }}"><i class="ti-more"></i>Shipped Orders</a>
+            <li class=" {{ Request::is('admin/orders/shipped') ? 'active' : '' }} ">
+                <a href="{{ route('shipped.orders') }}"><i class="ti-more"></i>Expédié Commandes</a>
             </li>
             <li class=" {{ Request::is('admin/order/delivered*') ? 'active' : '' }}">
-                <a href="{{ route('delivered.orders') }}"><i class="ti-more"></i>Delivered Orders</a>
+                <a href="{{ route('delivered.orders') }}"><i class="ti-more"></i>Livré Commandes</a>
             </li>
             <li class=" {{ Request::is('admin/orders/cancel') ? 'active' : '' }}">
-                <a href="{{ route('cancel.orders') }}"><i class="ti-more"></i>Cancel Orders</a>
+                <a href="{{ route('cancel.orders') }}"><i class="ti-more"></i>Annuler Commandes</a>
             </li>
             <li class=" {{ Request::is('admin/orders/return') ? 'active' : '' }}">
-                <a href="{{ route('return.orders') }}"><i class="ti-more"></i>Return Orders</a>
+                <a href="{{ route('return.orders') }}"><i class="ti-more"></i>Retour Commandes</a>
             </li>
         </ul>
     </li>
@@ -71,14 +71,14 @@
     <li class="treeview {{ ($route == 'brands.index') ? 'active' : '' }}">
         <a href="#">
         <i data-feather="message-circle"></i>
-        <span>Brands</span>
+        <span>Marques</span>
         <span class="pull-right-container">
             <i class="fa fa-angle-right pull-right"></i>
         </span>
         </a>
         <ul class="treeview-menu">
         <li class=" {{ ($route == 'brands.index') ? 'active' : '' }}">
-            <a href="{{ route('brands.index') }}"><i class="ti-more"></i>All Brand</a>
+            <a href="{{ route('brands.index') }}"><i class="ti-more"></i>Toute marque</a>
         </li>
         </ul>
     </li>
@@ -92,44 +92,44 @@
         </a>
         <ul class="treeview-menu">
             <li class=" {{ ($route == 'categories.index') ? 'active' : '' }}">
-                <a href="{{ route('categories.index') }}"><i class="ti-more"></i>All Category</a>
+                <a href="{{ route('categories.index') }}"><i class="ti-more"></i>Toute catégorie</a>
             </li>
             <li class=" {{ ($route == 'subcategories.index') ? 'active' : '' }}">
-                <a href="{{ route('subcategories.index') }}"><i class="ti-more"></i>All SubCategory</a>
+                <a href="{{ route('subcategories.index') }}"><i class="ti-more"></i>Toute sous-catégorie</a>
             </li>
             <li class=" {{ ($route == 'subsubcategories.index') ? 'active' : '' }}">
-                <a href="{{ route('subsubcategories.index') }}"><i class="ti-more"></i>All Sub-SubCategory</a>
+                <a href="{{ route('subsubcategories.index') }}"><i class="ti-more"></i>Toutes les sous-catégories</a>
             </li>
         </ul>
     </li>
 
     <li class="treeview {{ ($route == 'products.index') ? 'active' : '' }}">
         <a href="#">
-        <i data-feather="mail"></i> <span>Product Catalog</span>
+        <i data-feather="mail"></i> <span>Catalogue de produits</span>
         <span class="pull-right-container">
             <i class="fa fa-angle-right pull-right"></i>
         </span>
         </a>
         <ul class="treeview-menu">
             <li class=" {{ ($route == 'products.create') ? 'active' : '' }}">
-                <a href="{{ route('products.create') }}"><i class="ti-more"></i>Add Product</a>
+                <a href="{{ route('products.create') }}"><i class="ti-more"></i>Ajouter le produit</a>
             </li>
             <li class=" {{ ($route == 'products.index') ? 'active' : '' }}">
-                <a href="{{ route('products.index') }}"><i class="ti-more"></i>Manage Products</a>
+                <a href="{{ route('products.index') }}"><i class="ti-more"></i>Gérer les produits</a>
             </li>
         </ul>
     </li>
 
     <li class="treeview {{ ($prefix == '/slider') ? 'active' : '' }}">
         <a href="#">
-        <i data-feather="file"></i> <span>Slider</span>
+        <i data-feather="file"></i> <span>Les Caroussels (Slider)</span>
         <span class="pull-right-container">
             <i class="fa fa-angle-right pull-right"></i>
         </span>
         </a>
         <ul class="treeview-menu">
             <li class=" {{ ($route == '/slider') ? 'active' : '' }}">
-                <a href="{{ route('slider.index') }}"><i class="ti-more"></i>Manage Slider</a>
+                <a href="{{ route('slider.index') }}"><i class="ti-more"></i>Gérer Slider</a>
             </li>
         </ul>
     </li>
@@ -143,33 +143,33 @@
         </a>
         <ul class="treeview-menu">
             <li class=" {{ ($route == '/coupons') ? 'active' : '' }}">
-                <a href="{{ route('coupons.index') }}"><i class="ti-more"></i>Manage Coupon</a>
+                <a href="{{ route('coupons.index') }}"><i class="ti-more"></i>Gérer Coupon</a>
             </li>
         </ul>
     </li>
     <li class="treeview {{ ($prefix == '/division') ? 'active' : '' }}">
         <a href="#">
-        <i data-feather="file"></i> <span>Shipping Area</span>
+        <i data-feather="file"></i> <span>Zone d'expedition</span>
         <span class="pull-right-container">
             <i class="fa fa-angle-right pull-right"></i>
         </span>
         </a>
         <ul class="treeview-menu">
             <li class=" {{ ($route == '/division') ? 'active' : '' }}">
-                <a href="{{ route('division.index') }}"><i class="ti-more"></i>Ship Division</a>
+                <a href="{{ route('division.index') }}"><i class="ti-more"></i>Division des expéditions</a>
             </li>
             <li class=" {{ ($route == '/division') ? 'active' : '' }}">
-                <a href="{{ route('district.index') }}"><i class="ti-more"></i>Ship District</a>
+                <a href="{{ route('district.index') }}"><i class="ti-more"></i>District des expéditions</a>
             </li>
             <li class=" {{ ($route == '/state') ? 'active' : '' }}">
-                <a href="{{ route('state.index') }}"><i class="ti-more"></i>Ship State</a>
+                <a href="{{ route('state.index') }}"><i class="ti-more"></i>État des expéditions</a>
             </li>
         </ul>
     </li>
 
-    <li class="header nav-small-cap">User Interface</li>
+    <li class="header nav-small-cap">Interface utilisateur</li>
 
-    <li class="treeview">
+{{--    <li class="treeview">
         <a href="#">
         <i data-feather="grid"></i>
         <span>Components</span>
@@ -190,7 +190,7 @@
     </li>
     </ul>
 </section>
-
+--}}
 {{-- <div class="sidebar-footer">
     <!-- item-->
     <a href="javascript:void(0)" class="link" data-toggle="tooltip" title="" data-original-title="Settings" aria-describedby="tooltip92529"><i class="ti-settings"></i></a>

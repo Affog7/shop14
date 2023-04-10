@@ -57,11 +57,16 @@ Route::middleware(['auth:web'])->group(function(){
 
 // Frontend Pages routes
 Route::get('/', [FrontendPageController::class,'home'])->name('home');
+Route::get('/io', [FrontendPageController::class,'home1'])->name('home1');
 Route::get('/category', [FrontendPageController::class,'category'])->name('category');
 
 Route::get('/product/detail/{id}/{slug}', [FrontendPageController::class,'productDeatil'])->name('frontend-product-details');
 Route::get('/english/language', [LanguageController::class, 'englishLoad'])->name('english.language');
 Route::get('/bangla/language', [LanguageController::class, 'banglaLoad'])->name('bangla.language');
+
+// Search product
+Route::post('/product/s/', [FrontendPageController::class, 'searchProduct'])->name('product.s');
+// End Search product
 
 // Tags wise products route
 Route::get('/product/tag/{tag}', [FrontendPageController::class, 'tagwiseProduct'])->name('product.tag');

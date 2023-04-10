@@ -12,15 +12,15 @@
             <div class="col-md-8 col-lg-8 offset-2">
                 <div class="box">
                     <div class="box-header with-border d-flex justify-content-between align-items-center">
-                        <h3 class="box-title">Add New Sub-Sub Category</h3>
-                        <a href="{{ route('subsubcategories.index') }}" class="btn btn-primary">Back List Sub-Sub Category</a>
+                        <h3 class="box-title">Ajouter une nouvelle catégorie de sous-sousCatégorie</h3>
+                        <a href="{{ route('subsubcategories.index') }}" class="btn btn-primary">Catégorie de sous-sous-groupe de liste de dos</a>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
                         <form action="{{ route('subsubcategories.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <h5>Sub-SubCategory Name EN <span class="text-danger">*</span></h5>
+                                <h5>Nom de la catégorie de la sous-subcc. FR <span class="text-danger">*</span></h5>
                                 <div class="controls">
                                     <input type="text" name="subsubcategory_name_en" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
                                 </div>
@@ -29,7 +29,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <h5>Sub-SubCategory Name BN <span class="text-danger">*</span></h5>
+                                <h5>Sub-SubCategory Name EN <span class="text-danger">*</span></h5>
                                 <div class="controls">
                                     <input type="text" name="subsubcategory_name_bn" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
                                 </div>
@@ -38,9 +38,9 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <h5>Category Name <span class="text-danger">*</span></h5>
+                                <h5>Nom de catégorie <span class="text-danger">*</span></h5>
                                 <select class="custom-select" aria-label="Default select example" name="category_id">
-                                    <option selected>Select Category Name</option>
+                                    <option selected>Sélectionnez le nom de la catégorie</option>
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}">{{ $category->category_name_en }}</option>
                                     @endforeach
@@ -51,9 +51,9 @@
                             </div>
 
                             <div class="form-group">
-                                <h5>SubCategory Name <span class="text-danger">*</span></h5>
+                                <h5>Nom de sous-catégorie <span class="text-danger">*</span></h5>
                                 <select class="custom-select" name="subcategory_id" aria-label="Default select example">
-                                    <option value="" selected="" disabled="">Select SubCategory Name</option>
+                                    <option value="" selected="" disabled="">Sélectionnez le nom de la sous-catégorie</option>
                                 </select>
                                 @error('subcategory_id')
                                     <span class="alert text-danger">{{ $message }}</span>
@@ -61,7 +61,7 @@
                             </div>
 
                             <div class="text-xs-right">
-                                <button type="submit" class="btn btn-rounded btn-info">Submit</button>
+                                <button type="submit" class="btn btn-rounded btn-info">Soumettre</button>
                             </div>
                         </form>
                     </div>

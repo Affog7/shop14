@@ -24,7 +24,7 @@ class CODController extends Controller
         }
 
 
-        // Order Service Area
+        // Commande Service Area
         $order_id = Order::insertGetId([
             'user_id' => Auth::id(),
             'division_id' => $request->input('division_id'),
@@ -48,22 +48,11 @@ class CODController extends Controller
             'order_date' => Carbon::now()->format('d F Y'),
             'order_month' => Carbon::now()->format('F'),
             'order_year' => Carbon::now()->format('Y'),
-            'status' => 'pending',
+            'status' => 'En vérification',
             'created_at' => Carbon::now(),
         ]);
 
-         // Start Send Email
-            $invoice = Order::findOrFail($order_id);
-            $data = [
-                'invoice_no' => $invoice->invoice_number,
-                'amount' => $total_amount,
-                'name' => $invoice->name,
-                'email' => $invoice->email,
-            ];
-
-            Mail::to($invoice->email)->send(new OrderMail($data));
-
-            // End Send Email
+       
 
 
         // Cart Service Area
@@ -79,6 +68,18 @@ class CODController extends Controller
             ]);
         }
 
+          // Start Send Email
+          $invoice = Order::findOrFail($order_id);
+          $data = [
+              'invoice_no' => $invoice->invoice_number,
+              'amount' => $total_amount,
+              'name' => $invoice->name,
+              'email' => $invoice->email,
+          ];
+
+          Mail::to($invoice->email)->send(new OrderMail($data));
+
+          // End Send Email
         // After OrderItem Store forget coupon
         if(Session::has('coupon')){
             Session::forget('coupon');
@@ -88,7 +89,7 @@ class CODController extends Controller
         Cart::destroy();
 
         $notification = array(
-			'message' => 'Your Order Place Successfully',
+			'message' => 'Your Commande Place Successfully',
 			'alert-type' => 'success'
 		);
 

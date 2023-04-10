@@ -12,22 +12,22 @@
             <div class="col-12">
                 <div class="box">
                     <div class="box-header with-border d-flex justify-content-between align-items-center">
-                        <h3 class="box-title">Add New Product</h3>
-                        <a href="{{ route('subsubcategories.index') }}" class="btn btn-primary">Back List Product</a>
+                        <h3 class="box-title">Ajouter un nouveau produit</h3>
+                        <a href="{{ route('subsubcategories.index') }}" class="btn btn-primary">Produit de la liste de dos</a>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
                         <form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             {{-- First row start--}}
-                            <h5 class="text-warning">Product Related Category and Brand Selection Area</h5>
+                            <h5 class="text-warning">Catégorie et zone de sélection de marque liées au produit</h5>
                             <hr>
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <h5>Brand Name <span class="text-danger">*</span></h5>
+                                        <h5>Marque<span class="text-danger">*</span></h5>
                                         <select class="custom-select" aria-label="Default select example" name="brand_id">
-                                            <option selected>Select Brand Name</option>
+                                            <option selected>Sélectionner le nom de la marque</option>
                                             @foreach ($brands as $brand)
                                                 <option value="{{ $brand->id }}">{{ $brand->brand_name_en }}</option>
                                             @endforeach
@@ -39,9 +39,9 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <h5>Category Name <span class="text-danger">*</span></h5>
+                                        <h5>Nom de catégorie <span class="text-danger">*</span></h5>
                                         <select class="custom-select" aria-label="Default select example" name="category_id">
-                                            <option selected>Select Category Name</option>
+                                            <option selected> Sélectionnez le nom de la catégorie</option>
                                             @foreach ($categories as $category)
                                                 <option value="{{ $category->id }}">{{ $category->category_name_en }}</option>
                                             @endforeach
@@ -53,9 +53,9 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <h5>SubCategory Name <span class="text-danger">*</span></h5>
+                                        <h5>Nom de sous-catégorie <span class="text-danger">*</span></h5>
                                         <select class="custom-select" name="subcategory_id" aria-label="Default select example">
-                                            <option value="" selected="" disabled="">Select SubCategory Name</option>
+                                            <option value="" selected="" disabled=""> Sélectionnez le nom de la sous-catégorie</option>
                                         </select>
                                         @error('subcategory_id')
                                             <span class="alert text-danger">{{ $message }}</span>
@@ -64,9 +64,9 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <h5>Sub-SubCategory Name <span class="text-danger">*</span></h5>
+                                        <h5>Nom de la  sous-catégorie. <span class="text-danger">*</span></h5>
                                         <select class="custom-select" name="sub_subcategory_id" aria-label="Default select example">
-                                            <option value="" selected="" disabled="">Select Sub-SubCategory Name</option>
+                                            <option value="" selected="" disabled="">Sélectionnez le nom de la sous-catégorie</option>
                                         </select>
                                         @error('sub_subcategory_id')
                                             <span class="alert text-danger">{{ $message }}</span>
@@ -75,15 +75,15 @@
                                 </div>
                             </div>
                             {{-- First row end --}}
-                            <h5 class="text-warning mt-4">Product Basic Information Area</h5>
+                            <h5 class="text-warning mt-4">Zone d'information de base du produit</h5>
                             <hr>
                             {{-- Second row start --}}
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <h5>Product Name EN <span class="text-danger">*</span></h5>
+                                        <h5>Nom de produit FR <span class="text-danger">*</span></h5>
                                         <div class="controls">
-                                            <input type="text" name="product_name_en" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
+                                            <input type="text" name="product_name_en" class="form-control" required="" data-validation-required-message="Ce champ est obligatoire"> <div class="help-block"></div>
                                         </div>
                                         @error('product_name_en')
                                             <span class="alert text-danger">{{ $message }}</span>
@@ -92,9 +92,9 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <h5>Product Name BN <span class="text-danger">*</span></h5>
+                                        <h5>Product Name EN <span class="text-danger">*</span></h5>
                                         <div class="controls">
-                                            <input type="text" name="product_name_bn" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
+                                            <input type="text" name="product_name_bn" class="form-control" required="" data-validation-required-message="Ce champ est obligatoire"> <div class="help-block"></div>
                                         </div>
                                         @error('product_name_bn')
                                             <span class="alert text-danger">{{ $message }}</span>
@@ -114,9 +114,9 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <h5>Product Qty <span class="text-danger">*</span></h5>
+                                        <h5>Produit Qty(Quantité) <span class="text-danger">*</span></h5>
                                         <div class="controls">
-                                            <input type="number" name="product_qty" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
+                                            <input type="number" name="product_qty" class="form-control" required="" data-validation-required-message="Ce champ est obligatoire"> <div class="help-block"></div>
                                         </div>
                                         @error('product_qty')
                                             <span class="alert text-danger">{{ $message }}</span>
@@ -125,13 +125,13 @@
                                 </div>
                             </div>
                             {{-- Second row end --}}
-                            <h5 class="text-warning mt-4">Product Tag, Size, Color Information Area</h5>
+                            <h5 class="text-warning mt-4">Étiquette de produit, taille, zone d'information sur les couleurs</h5>
                             <hr>
                             {{-- Third row start --}}
                             <div class="row">
                                 <div class="col-md-2">
                                     <div class="form-group">
-                                        <h5>Product Tag EN <span class="text-danger"></span></h5>
+                                        <h5>Étiquette de produit FR <span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <input type="text" name="product_tags_en" class="form-control" value="lorem, Ipsum, Amet" data-role="tagsinput"> <div class="help-block"></div>
                                         </div>
@@ -142,7 +142,7 @@
                                 </div>
                                 <div class="col-md-2">
                                     <div class="form-group">
-                                        <h5>Product Tag BN <span class="text-danger"></span></h5>
+                                        <h5>Product Tag EN <span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <input type="text" name="product_tags_bn" class="form-control" value="lorem, Ipsum, Amet" data-role="tagsinput"> <div class="help-block"></div>
                                         </div>
@@ -153,7 +153,7 @@
                                 </div>
                                 <div class="col-md-2">
                                     <div class="form-group">
-                                        <h5>Product Size EN <span class="text-danger"></span></h5>
+                                        <h5>Taille du produit FR <span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <input type="text" name="product_size_en" class="form-control" value="small,medium,large" data-role="tagsinput"> <div class="help-block"></div>
                                         </div>
@@ -164,7 +164,7 @@
                                 </div>
                                 <div class="col-md-2">
                                     <div class="form-group">
-                                        <h5>Product Size BN <span class="text-danger"></span></h5>
+                                        <h5>Product Size EN <span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <input type="text" name="product_size_bn" class="form-control" value="small,medium,large" data-role="tagsinput">
                                             <div class="help-block"></div>
@@ -176,7 +176,7 @@
                                 </div>
                                 <div class="col-md-2">
                                     <div class="form-group">
-                                        <h5>Product Color EN <span class="text-danger"></span></h5>
+                                        <h5>Couleur du produit FR <span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <input type="text" name="product_color_en" class="form-control" value="red,green,blue" data-role="tagsinput">
                                             <div class="help-block"></div>
@@ -188,7 +188,7 @@
                                 </div>
                                 <div class="col-md-2">
                                     <div class="form-group">
-                                        <h5>Product Color BN <span class="text-danger"></span></h5>
+                                        <h5>Couleur du produit EN <span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <input type="text" name="product_color_bn" class="form-control" value="red,green,blue" data-role="tagsinput"><div class="help-block"></div>
                                         </div>
@@ -199,13 +199,13 @@
                                 </div>
                             </div>
                             {{-- Third row end --}}
-                            <h5 class="text-warning mt-4">Product Pricing Information Area</h5>
+                            <h5 class="text-warning mt-4">Zone d'information sur les prix du produit</h5>
                             <hr>
                             {{-- Fourth row start --}}
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <h5>Purchase Price <span class="text-danger"></span></h5>
+                                        <h5>Prix ​​d'achat <span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <input type="number" name="purchase_price" class="form-control"> <div class="help-block"></div>
                                         </div>
@@ -216,7 +216,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <h5>Selling Price <span class="text-danger">*</span></h5>
+                                        <h5>Prix ​​de vente <span class="text-danger">*</span></h5>
                                         <div class="controls input-group mb-3">
                                             <span class="input-group-text">$0.00</span>
                                             <input type="number" name="selling_price" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
@@ -240,13 +240,13 @@
                                 </div>
                             </div>
                             {{-- Fourth row end --}}
-                            <h5 class="text-warning mt-4">Product Description Area</h5>
+                            <h5 class="text-warning mt-4"> Zone de description du produit</h5>
                             <hr>
                             {{-- Fifth row start --}}
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <h5>Short Description EN <span class="text-danger"></span></h5>
+                                        <h5>Brève description FR <span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <textarea name="short_description_en" id="editor1" cols="30" rows="5" class="form-control"></textarea>
                                             <div class="help-block"></div>
@@ -258,7 +258,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <h5>Short Description BN <span class="text-danger"></span></h5>
+                                        <h5>Brève description EN <span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <textarea name="short_description_bn" id="editor2" cols="30" rows="5" class="form-control"></textarea>
                                             <div class="help-block"></div>
@@ -274,7 +274,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <h5>Long Description EN <span class="text-danger"></span></h5>
+                                        <h5>Longue description FR <span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <textarea name="long_description_en" id="editor3" cols="30" rows="5" class="form-control"></textarea>
                                             <div class="help-block"></div>
@@ -286,7 +286,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <h5>Long Description BN <span class="text-danger"></span></h5>
+                                        <h5>Long Description EN <span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <textarea name="long_description_bn" id="editor4" cols="30" rows="5" class="form-control"></textarea>
                                             <div class="help-block"></div>
@@ -298,7 +298,7 @@
                                 </div>
                             </div>
                             {{-- Sixth row end --}}
-                            <h5 class="text-warning mt-4">Product Image Upload Area</h5>
+                            <h5 class="text-warning mt-4">Zone de téléchargement d'image du produit</h5>
                             <hr>
                             {{-- Seventh row start --}}
                             <div class="row">
@@ -317,7 +317,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <h5>Product Multiple Image <span class="text-danger"></span></h5>
+                                        <h5>Produit Image multiple <span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <input type="file" name="product_images[]" class="form-control"  multiple="" id="multiImg" > <div class="help-block"></div>
                                         </div>
@@ -330,7 +330,7 @@
                             </div>
                             {{-- Seventh row end --}}
                             {{-- Eighth row start --}}
-                            <h5 class="text-warning mt-4">Product Additional Information Area</h5>
+                            <h5 class="text-warning mt-4">Le produit de l'information supplémentaire zone </h5>
                             <hr>
                             <div class="row mb-3">
                                 <div class="col-md-4">
@@ -350,7 +350,7 @@
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox"
                                         id="new_arrival" name="new_arrival" checked value="1">
-                                        <label class="form-check-label" for="new_arrival">New Arrival</label>
+                                        <label class="form-check-label" for="new_arrival">Nouvel Arrivage</label>
                                     </div>
                                 </div>
                             </div>
@@ -359,26 +359,26 @@
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox"
                                         id="special_offer" name="special_offer" value="1">
-                                        <label class="form-check-label" for="special_offer">Special Offer</label>
+                                        <label class="form-check-label" for="special_offer">Offre Spéciale</label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox"
                                         id="special_deals" name="special_deals" value="1">
-                                        <label class="form-check-label" for="special_deals">Special Deals</label>
+                                        <label class="form-check-label" for="special_deals"> Vente Spéciale</label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox"
                                         id="status" name="status" checked value="1">
-                                        <label class="form-check-label" for="status">Active Status</label>
+                                        <label class="form-check-label" for="status">Statut actif</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="text-xs-right">
-                                <button type="submit" class="btn btn-rounded btn-info">Add Product</button>
+                                <button type="submit" class="btn btn-rounded btn-info">Ajouter le produit</button>
                             </div>
                         </form>
                     </div>

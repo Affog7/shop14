@@ -62,7 +62,7 @@ class OrderDetailsController extends Controller
     {
         $orders = Order::where('user_id',Auth::id())
         ->where('return_reason','!=',NULL)
-        ->where('status','=', 'return')
+        ->where('status','=', 'retourné')
         ->orderBy('id','DESC')->get();
         return view('frontend.order.order-history',compact('orders'));
     }

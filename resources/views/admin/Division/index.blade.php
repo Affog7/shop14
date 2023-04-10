@@ -4,14 +4,14 @@
     @include('admin.dashboard_layout.breadcrumb', [
     'name' => 'Division',
     'url' => "division.index",
-    'section_name' => 'All Division'
+    'section_name' => 'TOUT DIVISION'
     ])
     <section class="content">
         <div class="row">
             <div class="col-md-8 col-lg-8">
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">All Division Data Table</h3>
+                        <h3 class="box-title">Tableau de données de la division</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -23,7 +23,7 @@
                                             role="grid" aria-describedby="example1_info">
                                             <thead>
                                                 <tr role="row">
-                                                    <th>Division Name</th>
+                                                    <th>Nom de la division</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -100,23 +100,23 @@
             <div class="col-md-4 col-lg-4">
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Add New Division</h3>
+                        <h3 class="box-title">Ajouter une nouvelle division</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
                         <form action="{{ route('division.store') }}" method="post">
                             @csrf
                             <div class="form-group">
-                                <h5>Division Name <span class="text-danger">*</span></h5>
+                                <h5>Nom de la division<span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                    <input type="text" name="division_name" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
+                                    <input type="text" name="division_name" class="form-control" required="" data-validation-required-message="Ce champ est obligatoire"> <div class="help-block"></div>
                                 </div>
                                 @error('division_name')
                                     <span class="alert text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="text-xs-right">
-                                <button type="submit" class="btn btn-rounded btn-info">Submit</button>
+                                <button type="submit" class="btn btn-rounded btn-info">Soumettre</button>
                             </div>
                         </form>
                     </div>

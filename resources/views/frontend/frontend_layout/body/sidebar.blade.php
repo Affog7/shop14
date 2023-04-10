@@ -21,13 +21,13 @@
     @include('frontend.frontend_layout.widgets.newsletter-widget')
     <!--  NEWSLETTER: END  --> 
     <!--  Testimonials -->
-    @include('frontend.frontend_layout.widgets.testimonial-widget')
+   {{--@include('frontend.frontend_layout.widgets.testimonial-widget')--}}
     <!--  Testimonials: END  -->
-    <div class="home-banner"> <img src="{{ asset('frontend') }}/assets/images/banners/LHS-banner.jpg" alt="Image">
-    </div>
+   {{--  <div class="home-banner"> <img src="{{ asset('frontend') }}/assets/images/banners/LHS-banner.jpg" alt="Image">
+    </div> --}}
 @elseif (request()->routeIs('category'))
     <!--  SHOP BY START  -->
-    @include('frontend.frontend_layout.category_page.shop-by-widget')
+  {{--  @include('frontend.frontend_layout.category_page.shop-by-widget') --}} 
     <!--  SHOP BY END  -->
 @endif
 <!-- /.sidebar-widget --> 

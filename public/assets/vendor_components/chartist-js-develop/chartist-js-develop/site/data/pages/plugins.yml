@@ -32,7 +32,7 @@ sections:
 
             - type: hint
               data:
-                title: Order of specification
+                title: Commande of specification
                 text: >
                         Plugins are chainable and the order of specification in the plugins array of your configuration
                         is important for the end result.

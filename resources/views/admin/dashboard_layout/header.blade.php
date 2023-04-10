@@ -49,7 +49,7 @@
                         <h4 class="mb-0 mt-0">Notifications</h4>
                     </div>
                     <div>
-                        <a href="#" class="text-danger">Clear All</a>
+                        <a href="#" class="text-danger">Effacer tout </a>
                     </div>
                 </div>
             </div>
@@ -57,7 +57,7 @@
 
             <li>
             <!-- inner menu: contains the actual data -->
-            <ul class="menu sm-scrol">
+           <!--  <ul class="menu sm-scrol">
                 <li>
                 <a href="#">
                     <i class="fa fa-users text-info"></i> Curabitur id eros quis nunc suscipit blandit.
@@ -93,10 +93,10 @@
                     <i class="fa fa-user text-success"></i> Nullam euismod dolor ut quam interdum, at scelerisque ipsum imperdiet.
                 </a>
                 </li>
-            </ul>
+            </ul>-->
             </li>
             <li class="footer">
-                <a href="#">View all</a>
+                <a href="#"> Afficher tous</a>
             </li>
         </ul>
         </li>
@@ -109,11 +109,11 @@
         </a>
         <ul class="dropdown-menu animated flipInX">
             <li class="user-body">
-                <a class="dropdown-item" href="{{ route('profile.index') }}"><i class="ti-user text-muted mr-2"></i> Profile</a>
-                <a class="dropdown-item" href="{{ route('admin.change.password') }}"><i class="ti-wallet text-muted mr-2"></i>Change Password</a>
-                <a class="dropdown-item" href="#"><i class="ti-settings text-muted mr-2"></i> Settings</a>
+                <a class="dropdown-item" href="{{ route('profile.index') }}"><i class="ti-user text-muted mr-2"></i> Profil</a>
+                <a class="dropdown-item" href="{{ route('admin.change.password') }}"><i class="ti-wallet text-muted mr-2"></i>Changer le mot de passe</a>
+                <a class="dropdown-item" href="#"><i class="ti-settings text-muted mr-2"></i> Paramètres</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{{ route('admin.logout') }}"><i class="ti-lock text-muted mr-2"></i> Logout</a>
+                <a class="dropdown-item" href="{{ route('admin.logout') }}"><i class="ti-lock text-muted mr-2"></i> Se déconnecter</a>
             </li>
         </ul>
         </li>

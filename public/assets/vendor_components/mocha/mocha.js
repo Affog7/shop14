@@ -1902,7 +1902,7 @@ exports.colors = {
   , 'bright pass': 92
   , 'bright fail': 91
   , 'bright yellow': 93
-  , 'pending': 36
+  , 'En vérification': 36
   , 'suite': 0
   , 'error title': 0
   , 'error message': 31
@@ -2116,7 +2116,7 @@ function Base(runner) {
     stats.duration = new Date - stats.start;
   });
 
-  runner.on('pending', function(){
+  runner.on('En vérification', function(){
     stats.pending++;
   });
 }
@@ -2146,8 +2146,8 @@ Base.prototype.epilogue = function(){
 
   // pending
   if (stats.pending) {
-    fmt = color('pending', ' ')
-      + color('pending', ' %d pending');
+    fmt = color('En vérification', ' ')
+      + color('En vérification', ' %d pending');
 
     console.log(fmt, stats.pending);
   }
@@ -2452,8 +2452,8 @@ function Dot(runner) {
     process.stdout.write('\n  ');
   });
 
-  runner.on('pending', function(test){
-    process.stdout.write(color('pending', Base.symbols.dot));
+  runner.on('En vérification', function(test){
+    process.stdout.write(color('En vérification', Base.symbols.dot));
   });
 
   runner.on('pass', function(test){
@@ -3277,9 +3277,9 @@ function List(runner) {
     process.stdout.write(color('pass', '    ' + test.fullTitle() + ': '));
   });
 
-  runner.on('pending', function(test){
+  runner.on('En vérification', function(test){
     var fmt = color('checkmark', '  -')
-      + color('pending', ' %s');
+      + color('En vérification', ' %s');
     console.log(fmt, test.fullTitle());
   });
 
@@ -3492,7 +3492,7 @@ function NyanCat(runner) {
     self.draw();
   });
 
-  runner.on('pending', function(test){
+  runner.on('En vérification', function(test){
     self.draw();
   });
 
@@ -3862,8 +3862,8 @@ function Spec(runner) {
     if (1 == indents) console.log();
   });
 
-  runner.on('pending', function(test){
-    var fmt = indent() + color('pending', '  - %s');
+  runner.on('En vérification', function(test){
+    var fmt = indent() + color('En vérification', '  - %s');
     console.log(fmt, test.title);
   });
 
@@ -3945,7 +3945,7 @@ function TAP(runner) {
     ++n;
   });
 
-  runner.on('pending', function(test){
+  runner.on('En vérification', function(test){
     console.log('ok %d %s # SKIP -', n, title(test));
   });
 
@@ -4020,7 +4020,7 @@ function XUnit(runner) {
     , tests = []
     , self = this;
 
-  runner.on('pending', function(test){
+  runner.on('En vérification', function(test){
     tests.push(test);
   });
 
@@ -4787,7 +4787,7 @@ Runner.prototype.runTests = function(suite, fn){
 
     // pending
     if (test.pending) {
-      self.emit('pending', test);
+      self.emit('En vérification', test);
       self.emit('test end', test);
       return next();
     }

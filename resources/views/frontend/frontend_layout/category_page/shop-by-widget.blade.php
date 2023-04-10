@@ -59,7 +59,7 @@
                 <div class="price-range-holder"> <span class="min-max"> <span class="pull-left">$200.00</span> <span
                             class="pull-right">$800.00</span> </span>
                     <input type="text" id="amount" style="border:0; color:#666666; font-weight:bold;text-align:center;">
-                    <div class="slider slider-horizontal" id="">
+                    <!--div class="slider slider-horizontal" id="">
                         <div class="slider-track">
                             <div class="slider-selection" style="left: 16.6667%; width: 26.6667%;"></div>
                             <div class="slider-handle min-slider-handle" tabindex="0" style="left: 16.6667%;"></div>
@@ -77,7 +77,8 @@
                             <div class="tooltip-arrow"></div>
                             <div class="tooltip-inner">360</div>
                         </div>
-                    </div><input type="text" class="price-slider" value="200,360" data="value: '200,360'"
+                    </div-->
+                    <input type="text" class="price-slider" value="200,360" data="value: '200,360'"
                         style="display: none;">
                 </div>
                 <!-- /.price-range-holder -->
@@ -144,7 +145,7 @@
         @include('frontend.frontend_layout.widgets.product-tags-widget')
         <!-- /.sidebar-widget -->
         <!----------- Testimonials------------->
-        @include('frontend.frontend_layout.widgets.testimonial-widget')
+        {{--@include('frontend.frontend_layout.widgets.testimonial-widget')--}}
         <!--  Testimonials: END  -->
     </div>
     <!-- /.sidebar-filter -->

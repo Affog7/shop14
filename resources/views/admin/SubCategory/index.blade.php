@@ -4,15 +4,15 @@
     @include('admin.dashboard_layout.breadcrumb', [
     'name' => 'SubCategory',
     'url' => "subcategories.index",
-    'section_name' => 'All SubCategory'
+    'section_name' => 'Toute sous-catégorie'
     ])
     <section class="content">
         <div class="row">
             <div class="col-md-12 col-lg-12">
                 <div class="box">
                     <div class="box-header with-border d-flex justify-content-between align-items-center">
-                        <h3 class="box-title">All SubCategory Data Table</h3>
-                        <a href="{{ route('subcategories.create') }}" class="btn btn-primary">Create New SubCategory</a>
+                        <h3 class="box-title">TOUT Tableau de données de la sous-catégorie</h3>
+                        <a href="{{ route('subcategories.create') }}" class="btn btn-primary">Créer une nouvelle sous-catégorie</a>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -25,9 +25,9 @@
                                             <thead>
                                                 <tr role="row">
                                                     <th>#</th>
+                                                    <th>Nom de sous-catégorie FR</th>
                                                     <th>SubCategory Name EN</th>
-                                                    <th>SubCategory Name BN</th>
-                                                    <th>Category Name</th>
+                                                    <th>Nom de la catégorie </th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>

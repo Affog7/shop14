@@ -12,8 +12,8 @@
             <div class="col-12">
                 <div class="box">
                     <div class="box-header with-border d-flex justify-content-between align-items-center">
-                        <h3 class="box-title">Update Product</h3>
-                        <a href="{{ route('products.index') }}" class="btn btn-primary">Back List Product</a>
+                        <h3 class="box-title">Mettre à jour le produit</h3>
+                        <a href="{{ route('products.index') }}" class="btn btn-primary">Produit de la liste de dos</a>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -21,14 +21,14 @@
                             @method('PUT')
                             @csrf
                             {{-- First row start--}}
-                            <h5 class="text-warning">Product Related Category and Brand Selection Area</h5>
+                            <h5 class="text-warning">Catégorie et zone de sélection de marque liées au produit</h5>
                             <hr>
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <h5>Brand Name <span class="text-danger">*</span></h5>
+                                        <h5>Marque<span class="text-danger">*</span></h5>
                                         <select class="custom-select" aria-label="Default select example" name="brand_id">
-                                            <option selected>Select Brand Name</option>
+                                            <option selected>Sélectionner le nom de la marque</option>
                                             @foreach ($brands as $brand)
                                             <option value="{{ $brand->id }}" {{ $brand->id == $product->brand_id ? 'selected': '' }} >{{ $brand->brand_name_en }}</option>
                                             @endforeach
@@ -40,9 +40,9 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <h5>Category Name <span class="text-danger">*</span></h5>
+                                        <h5>Nom de catégorie <span class="text-danger">*</span></h5>
                                         <select class="custom-select" aria-label="Default select example" name="category_id">
-                                            <option selected>Select Category Name</option>
+                                            <option selected>Sélectionnez le nom de la catégorie</option>
                                             @foreach ($categories as $category)
                                                 <option value="{{ $category->id }}" {{ $category->id == $product->category_id ? 'selected' : '' }}>{{ $category->category_name_en }}</option>
                                             @endforeach
@@ -54,9 +54,9 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <h5>SubCategory Name <span class="text-danger">*</span></h5>
+                                        <h5>Nom de sous-catégorie <span class="text-danger">*</span></h5>
                                         <select class="custom-select" name="subcategory_id" aria-label="Default select example">
-                                            <option value="" selected="" disabled="">Select SubCategory Name</option>
+                                            <option value="" selected="" disabled="">Sélectionnez le nom de la sous-catégorie</option>
                                             @foreach($subcategories as $sub)
                                                 <option value="{{ $sub->id }}" {{ $sub->id == $product->subcategory_id ? 'selected': '' }} >{{ $sub->subcategory_name_en }}</option>
 			                                @endforeach
@@ -68,9 +68,9 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <h5>Sub-SubCategory Name <span class="text-danger">*</span></h5>
+                                        <h5>Nom de la catégorie de la subcc. <span class="text-danger">*</span></h5>
                                         <select class="custom-select" name="sub_subcategory_id" aria-label="Default select example">
-                                            <option value="" selected="" disabled="">Select Sub-SubCategory Name</option>
+                                            <option value="" selected="" disabled="">Sélectionnez le nom de la sous-catégorie</option>
                                             @foreach($subsubcategories as $subsub)
                                             <option value="{{ $subsub->id }}" {{ $subsub->id == $product->sub_subcategory_id ? 'selected': '' }} >{{ $subsub->subsubcategory_name_en }}</option>
                                             @endforeach
@@ -82,13 +82,13 @@
                                 </div>
                             </div>
                             {{-- First row end --}}
-                            <h5 class="text-warning mt-4">Product Basic Information Area</h5>
+                            <h5 class="text-warning mt-4">Zone d'information de base du produit</h5>
                             <hr>
                             {{-- Second row start --}}
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <h5>Product Name EN <span class="text-danger">*</span></h5>
+                                        <h5>Nom de produit FR <span class="text-danger">*</span></h5>
                                         <div class="controls">
                                             <input type="text" name="product_name_en" value="{{ old('product_name_en', $product->product_name_en) }}"
                                             class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
@@ -100,7 +100,7 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <h5>Product Name BN <span class="text-danger">*</span></h5>
+                                        <h5>Product Name EN <span class="text-danger">*</span></h5>
                                         <div class="controls">
                                             <input type="text" name="product_name_bn" value="{{ old('product_name_bn', $product->product_name_bn) }}"
                                             class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
@@ -124,7 +124,7 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <h5>Product Qty <span class="text-danger">*</span></h5>
+                                        <h5>Produit Qty <span class="text-danger">*</span></h5>
                                         <div class="controls">
                                             <input type="number" name="product_qty" value="{{ old('product_qty', $product->product_qty) }}"
                                             class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
@@ -136,13 +136,13 @@
                                 </div>
                             </div>
                             {{-- Second row end --}}
-                            <h5 class="text-warning mt-4">Product Tag, Size, Color Information Area</h5>
+                            <h5 class="text-warning mt-4">Étiquette de produit, taille, zone d'information sur les couleurs</h5>
                             <hr>
                             {{-- Third row start --}}
                             <div class="row">
                                 <div class="col-md-2">
                                     <div class="form-group">
-                                        <h5>Product Tag EN <span class="text-danger"></span></h5>
+                                        <h5>Étiquette de produit FR <span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <input type="text" name="product_tags_en" value="{{ old('product_tags_en', $product->product_tags_en) }}"
                                             class="form-control" data-role="tagsinput"> <div class="help-block"></div>
@@ -154,7 +154,7 @@
                                 </div>
                                 <div class="col-md-2">
                                     <div class="form-group">
-                                        <h5>Product Tag BN <span class="text-danger"></span></h5>
+                                        <h5>Étiquette de produit EN <span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <input type="text" name="product_tags_bn" value="{{ old('product_tags_bn', $product->product_tags_bn) }}"
                                             class="form-control" data-role="tagsinput"> <div class="help-block"></div>
@@ -166,7 +166,7 @@
                                 </div>
                                 <div class="col-md-2">
                                     <div class="form-group">
-                                        <h5>Product Size EN <span class="text-danger"></span></h5>
+                                        <h5>Taille du produit FR <span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <input type="text" name="product_size_en" value="{{ old('product_size_en', $product->product_size_en) }}"
                                             class="form-control" data-role="tagsinput"> <div class="help-block"></div>
@@ -178,7 +178,7 @@
                                 </div>
                                 <div class="col-md-2">
                                     <div class="form-group">
-                                        <h5>Product Size BN <span class="text-danger"></span></h5>
+                                        <h5>Taille du produit EN <span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <input type="text" name="product_size_bn" value="{{ old('product_size_bn', $product->product_size_bn) }}"
                                             class="form-control" data-role="tagsinput">
@@ -191,7 +191,7 @@
                                 </div>
                                 <div class="col-md-2">
                                     <div class="form-group">
-                                        <h5>Product Color EN <span class="text-danger"></span></h5>
+                                        <h5>Couleur du produit FR <span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <input type="text" name="product_color_en" value="{{ old('product_color_en', $product->product_color_en) }}"
                                             class="form-control" data-role="tagsinput">
@@ -204,7 +204,7 @@
                                 </div>
                                 <div class="col-md-2">
                                     <div class="form-group">
-                                        <h5>Product Color BN <span class="text-danger"></span></h5>
+                                        <h5>Couleur du produit EN <span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <input type="text" name="product_color_bn" value="{{ old('product_color_bn', $product->product_color_bn) }}"
                                             class="form-control" data-role="tagsinput"><div class="help-block"></div>
@@ -216,13 +216,13 @@
                                 </div>
                             </div>
                             {{-- Third row end --}}
-                            <h5 class="text-warning mt-4">Product Pricing Information Area</h5>
+                            <h5 class="text-warning mt-4">Zone d'information sur les prix du produit</h5>
                             <hr>
                             {{-- Fourth row start --}}
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <h5>Purchase Price <span class="text-danger"></span></h5>
+                                        <h5>Prix ​​d'achat <span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <input type="number" name="purchase_price" value="{{ old('purchase_price', $product->purchase_price) }}"
                                             class="form-control"> <div class="help-block"></div>
@@ -234,7 +234,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <h5>Selling Price <span class="text-danger">*</span></h5>
+                                        <h5>Prix ​​de vente <span class="text-danger">*</span></h5>
                                         <div class="controls input-group mb-3">
                                             <span class="input-group-text">$0.00</span>
                                             <input type="number" name="selling_price" value="{{ old('selling_price', $product->selling_price) }}"
@@ -260,13 +260,13 @@
                                 </div>
                             </div>
                             {{-- Fourth row end --}}
-                            <h5 class="text-warning mt-4">Product Description Area</h5>
+                            <h5 class="text-warning mt-4">Zone de description du produit </h5>
                             <hr>
                             {{-- Fifth row start --}}
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <h5>Short Description EN <span class="text-danger"></span></h5>
+                                        <h5> Brève description FR <span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <textarea name="short_description_en" id="editor1" cols="30" rows="5" class="form-control">
                                                 {{ old('short_description_en', $product->short_description_en) }}
@@ -280,7 +280,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <h5>Short Description BN <span class="text-danger"></span></h5>
+                                        <h5>brève description EN <span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <textarea name="short_description_bn" id="editor2" cols="30" rows="5" class="form-control">
                                                 {{ old('short_description_bn', $product->short_description_bn) }}
@@ -298,7 +298,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <h5>Long Description EN <span class="text-danger"></span></h5>
+                                        <h5>Longue description FR <span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <textarea name="long_description_en" id="editor3" cols="30" rows="5" class="form-control">
                                                 {{ old('long_description_en', $product->long_description_en) }}
@@ -312,7 +312,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <h5>Long Description BN <span class="text-danger"></span></h5>
+                                        <h5>Longue description EN <span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <textarea name="long_description_bn" id="editor4" cols="30" rows="5" class="form-control">
                                                 {{ old('long_description_bn', $product->long_description_bn) }}
@@ -326,13 +326,13 @@
                                 </div>
                             </div>
                             {{-- Sixth row end --}}
-                            <h5 class="text-warning mt-4">Product Image Upload Area</h5>
+                            <h5 class="text-warning mt-4">Zone de téléchargement d'image du produit</h5>
                             <hr>
                             {{-- Seventh row start --}}
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <h5>Product Thumbnail <span class="text-danger">*</span></h5>
+                                        <h5>Product Vignette <span class="text-danger">*</span></h5>
                                         <div class="controls">
                                             <input type="file" name="product_thumbnail" class="form-control"
                                             onChange="mainThumbnailShow(this)"> <div class="help-block"></div>
@@ -343,10 +343,19 @@
                                         <img src="{{ asset($product->product_thumbnail) }}" id="mainThumbnail" alt="">
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <h5>Produit Image multiple<span class="text-danger"></span></h5>
+                                        <div class="controls">
+                                            <input type="file" name="product_images[]" class="form-control" multiple="" id="multiImg"> <div class="help-block"></div>
+                                        </div>
+                                                                                <div class="row" id="preview_img"></div>
+                                    </div>
+                                </div>
                             </div>
                             {{-- Seventh row end --}}
                             {{-- Eighth row start --}}
-                            <h5 class="text-warning mt-4">Product Additional Information Area</h5>
+                            <h5 class="text-warning mt-4">Zone d'informations supplémentaires du produit</h5>
                             <hr>
                             <div class="row mb-3">
                                 <div class="col-md-4">
@@ -408,8 +417,8 @@
             <div class="col-12">
                 <div class="box">
                     <div class="box-header with-border d-flex justify-content-between align-items-center">
-                        <h3 class="box-title">Update Product Multi Image</h3>
-                        <a href="{{ route('products.index') }}" class="btn btn-primary">Back List Product</a>
+                        <h3 class="box-title">Mettre à jour le produit multi-image </h3>
+                        <a href="{{ route('products.index') }}" class="btn btn-primary">Produit de la liste de dos </a>
                     </div>
                     <div class="box-body">
                         <form method="POST" action="{{ route('update-product-image') }}" enctype="multipart/form-data">
@@ -425,7 +434,7 @@
                                         </h5>
                                     <p class="card-text">
                                         <div class="form-group">
-                                            <label class="form-control-label">Change Image <span class="tx-danger">*</span></label>
+                                            <label class="form-control-label">Changer l'image<span class="tx-danger">*</span></label>
                                             <input class="form-control" type="file"
                                         name="multi_img[ {{ $img->id }} ]">
                                         </div>
@@ -436,7 +445,7 @@
                                 @endforeach
                             </div>
                             <div class="text-xs-right">
-                                <input type="submit" class="btn btn-rounded btn-primary mb-5" value="Update Image">
+                                <input type="submit" class="btn btn-rounded btn-primary mb-5" value="Mettre à jour les images">
                             </div>
                             <br><br>
                         </form>

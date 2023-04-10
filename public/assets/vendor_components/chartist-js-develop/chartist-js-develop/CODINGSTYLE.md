@@ -2056,7 +2056,7 @@ frequently—and more frequently is too frequently.
 
 ***
 
-### Declaration Order
+### Declaration Commande
 
 This example should give a rough outline of how to order CSS properties within a selector. This is important in order
 to guarantee better readability and better scannability.

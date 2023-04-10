@@ -4,15 +4,15 @@
     @include('admin.dashboard_layout.breadcrumb', [
     'name' => 'Category',
     'url' => "categories.index",
-    'section_name' => 'All Category'
+    'section_name' => 'Toute catégorie'
     ])
     <section class="content">
         <div class="row">
             <div class="col-md-12 col-lg-12">
                 <div class="box">
                     <div class="box-header with-border d-flex justify-content-between align-items-center">
-                        <h3 class="box-title">All Brands Data Table</h3>
-                        <a href="{{ route('categories.create') }}" class="btn btn-primary">Create New Category</a>
+                        <h3 class="box-title">Tableau de données de toutes les marques</h3>
+                        <a href="{{ route('categories.create') }}" class="btn btn-primary">Créer une nouvelle catégorie</a>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -25,10 +25,10 @@
                                             <thead>
                                                 <tr role="row">
                                                     <th>#</th>
-                                                    <th>Category ICON</th>
-                                                    <th>Category Name EN</th>
-                                                    <th>Category Name BN</th>
-                                                    <th>Category Image</th>
+                                                    <th>Catégorie ICON</th>
+                                                    <th>Catégorie Nom FR</th>
+                                                    <th>Catégorie Nom EN</th>
+                                                    <th>Catégorie Image</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>

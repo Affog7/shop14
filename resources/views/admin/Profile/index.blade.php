@@ -1,6 +1,6 @@
 @extends('admin.admin_master')
 
-@section('title', 'Admin Profile')
+@section('title', 'Admin Profil')
 
 @section('dashboard_content')
 <section class="content">
@@ -10,8 +10,8 @@
             <!-- Add the bg color to the header using any of the bg-* classes -->
         <div class="widget-user-header bg-black">
             <a href="{{ route('admin.profile.edit') }}" class="btn btn-info" style="float: right">Edit Profile</a>
-            <h3 class="widget-user-username">Admin Name: {{ $adminData->name }}</h3>
-            <h6 class="widget-user-desc">Admin Email: {{ $adminData->email }}</h6>
+            <h3 class="widget-user-username">Nom de l'administrateur: {{ $adminData->name }}</h3>
+            <h6 class="widget-user-desc"> E-mail administrateur: {{ $adminData->email }}</h6>
         </div>
         <div class="widget-user-image">
             <img class="rounded-circle" src="{{ !empty($adminData->profile_photo_path) ? url('upload/admin_images/'.$adminData->profile_photo_path) : url('upload/admin_images/blank_profile_photo.jpg') }}" alt="User Avatar">

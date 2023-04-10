@@ -1,7 +1,7 @@
 @extends('frontend.frontend_master')
 
 @section('title')
-    Al Araf Fashion - Wishlist Page
+     Fashion - Wishlist Page
 @endsection
 
 @section('frontend_content')

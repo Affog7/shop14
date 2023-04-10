@@ -50,7 +50,7 @@
                         </tr>
 
                         <tr>
-                            <th> Order Date : </th>
+                            <th> Commande Date : </th>
                             <th> {{ $order->order_date }} </th>
                         </tr>
 
@@ -66,7 +66,7 @@
                     <h4>Order Details
                         <span class="text-danger"> Invoice : {{ $order->invoice_number }}</span>
                     </h4>
-                    @if ($order->status == 'pending')
+                    @if ($order->status == 'En vérification')
 
                     @else
                     <ul>
@@ -109,12 +109,12 @@
                         </tr>
 
                         <tr>
-                            <th> Order Total :$ </th>
+                            <th> Commande Total :$ </th>
                             <th>{{ $order->amount }} </th>
                         </tr>
 
                         <tr>
-                            <th> Order : </th>
+                            <th> Commande : </th>
                             <th>
                                 <span class="badge badge-pill badge-warning"
                                     style="background: #418DB9;">{{ $order->status }} </span>
@@ -188,13 +188,13 @@
                                 @endphp
 
                                 <td class="col-md-1">
-                                    @if ($order->status == 'pending')
+                                    @if ($order->status == 'En vérification')
                                         <strong>
                                             <span class="badge badge-pill badge-success" style="background: #418DB9;"> No
                                                 File</span>
                                         </strong>
 
-                                    @elseif($order->status != 'pending')
+                                    @elseif($order->status != 'En vérification')
 
                                         <a target="_blank" class="btn btn-danger" href="{{ asset('upload/pdf/' . $file->digital_file) }}">
                                             <i class="fa fa-download"></i>Inovice
@@ -208,7 +208,7 @@
             </div>
         </div> <!-- / end col md 8 -->
     </div> <!-- // END ORDER ITEM ROW -->
-    @if ($order->status == 'delivered')
+    @if ($order->status == 'livrée')
     Delivered
     @else
         @php
@@ -220,7 +220,7 @@
             <form action="{{ route('return.order', $order->id) }}" method="post">
                 @csrf
                 <div class="form-group">
-                    <label for="label"> Order Return Reason:</label>
+                    <label for="label"> Commande Return Reason:</label>
                     <textarea name="return_reason" id="" class="form-control" cols="30" rows="05">Return Reason</textarea>
                 </div>
                 <button type="submit" class="btn btn-danger">Order Return</button>

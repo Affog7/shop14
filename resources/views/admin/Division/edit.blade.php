@@ -4,7 +4,7 @@
     @include('admin.dashboard_layout.breadcrumb', [
     'name' => 'Division',
     'url' => "division.index",
-    'section_name' => 'All Division'
+    'section_name' => 'TOUT DIVISION'
     ])
     <section class="content">
         <div class="row">
@@ -12,7 +12,7 @@
             <div class="col-md-8 col-lg-8 m-auto">
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Edit Division</h3>
+                        <h3 class="box-title">Division de l'édition</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -20,7 +20,7 @@
                             @method('PUT')
                             @csrf
                             <div class="form-group">
-                                <h5>Division Name <span class="text-danger">*</span></h5>
+                                <h5>Nom de la division<span class="text-danger">*</span></h5>
                                 <div class="controls">
                                     <input type="text" name="division_name" class="form-control" required=""  value="{{old('division_name',$division->division_name) }}" data-validation-required-message="This field is required"> <div class="help-block"></div>
                                 </div>
@@ -29,7 +29,7 @@
                                 @enderror
                             </div>
                             <div class="text-xs-right">
-                                <button type="submit" class="btn btn-rounded btn-info">Update</button>
+                                <button type="submit" class="btn btn-rounded btn-info">Mise à jour</button>
                             </div>
                         </form>
                     </div>

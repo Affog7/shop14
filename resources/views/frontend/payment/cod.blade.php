@@ -1,7 +1,7 @@
 @extends('frontend.frontend_master')
 
 @section('title')
-    Al Araf Fashion - COD Page
+     Fashion - COD Page
 @endsection
 
 @section('frontend_style')
@@ -72,7 +72,7 @@
                               </label>
                             </div>
                             <br>
-                            <button class="btn btn-primary">Confirm Order</button>
+                            <button class="btn btn-primary">Confirm Commande</button>
                           </form>
                     </div>
                 </div>
