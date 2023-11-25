@@ -207,6 +207,8 @@
                 </table>
             </div>
         </div> <!-- / end col md 8 -->
+
+        
     </div> <!-- // END ORDER ITEM ROW -->
     @if ($order->status == 'livrée')
     Delivered
@@ -230,6 +232,13 @@
         @endif
     @endif
     <br><br>
+    <div  class="row">
+        <div  class="col-6" >
+            @include('admin.widgets.messages.wmessage',[
+                'type' => 'client'
+                ])
+        </div>
+    </div>
 @endsection
 
 @section('frontend_script')

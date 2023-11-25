@@ -9,7 +9,7 @@
         </li>
     </ul>
 </div>
-    &copy; <span id="copy-year">2019</span> <a href="#"></a>. All Rights Reserved.
+    &copy; <span id="copy-year">2023</span> <a href="#"></a>. All Rights Reserved.
     <script>
         var d = new Date();
         var year = d.getFullYear();

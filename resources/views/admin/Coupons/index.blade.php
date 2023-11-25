@@ -44,11 +44,7 @@
                                                     <td class="sorting_1">{{ $item->coupon_discount }} %</td>
                                                     <td>{{ Carbon\Carbon::parse($item->coupon_validity)->format('D, d F Y') }}</td>
                                                     <td>
-                                                        {{-- @if ($item->status == 1)
-                                                            <span class="badge rounded-pill badge bg-success">Active</span>
-                                                        @else
-                                                            <span class="badge rounded-pill bg-danger">InActive</span>
-                                                        @endif --}}
+                                                       
                                                         <input data-id="{{$item->id}}" class="toggle-class" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{ $item->coupon_status ? 'checked' : '' }}>
                                                     </td>
                                                     <td>

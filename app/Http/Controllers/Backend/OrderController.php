@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Order;
+use App\Models\Message;
 use App\Models\OrderItem;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -59,9 +60,12 @@ class OrderController extends Controller
             ->with('product')
             ->orderBy('id', 'DESC')->get();
 
+            $messages = Message::where('order_id',$order->id)->orderBy('id', 'ASC')->get();
+
         return view('admin.Orders.show', compact(
             'order',
-            'orderItems'
+            'orderItems',
+            'messages',
         ));
     }
 

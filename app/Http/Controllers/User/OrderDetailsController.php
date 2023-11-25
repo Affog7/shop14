@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Order;
+use App\Models\Message;
 use App\Models\OrderItem;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -20,11 +21,14 @@ class OrderDetailsController extends Controller
         $orderItems = OrderItem::where('order_id', $order->id)
             ->with('product')
             ->orderBy('id', 'DESC')->get();
+         
+        $messages = Message::where('order_id',$order->id)->orderBy('id', 'ASC')->get();
 
             //return $orderItems;
         return view('frontend.order.order-details', compact(
             'order',
-            'orderItems'
+            'orderItems',
+            'messages'
         ));
     }
 

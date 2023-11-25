@@ -31,7 +31,7 @@
                             <div class="form-group">
                                 <h5>Marque EN <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                    <input type="text" name="brand_name_bn" value="{{ $brand->brand_name_bn }}" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
+                                    <input type="text" name="brand_name_bn" value="{{ $brand->brand_name_bn }}" class="form-control" required="" data-validation-required-message="Ce champ est obligatoire"> <div class="help-block"></div>
                                 </div>
                                 @error('brand_name_bn')
                                     <span class="alert text-danger">{{ $message }}</span>
@@ -40,7 +40,7 @@
                             <div class="form-group">
                                 <h5>Marque Image <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                    <input type="file" name="brand_image" id="brand_image" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
+                                    <input type="file" name="brand_image" id="brand_image" class="form-control" required="" data-validation-required-message="Ce champ est obligatoire"> <div class="help-block"></div>
                                 </div>
                                 @error('brand_image')
                                     <span class="alert text-danger">{{ $message }}</span>

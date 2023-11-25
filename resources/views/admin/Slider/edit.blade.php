@@ -12,37 +12,37 @@
             <div class="col-md-8 col-lg-8 offset-2">
                 <div class="box">
                     <div class="box-header with-border d-flex justify-content-between align-items-center">
-                        <h3 class="box-title">Update Slider</h3>
-                        <a href="{{ route('slider.index') }}" class="btn btn-primary">Back to Slider List</a>
+                        <h3 class="box-title">Mettre à jour la bande</h3>
+                        <a href="{{ route('slider.index') }}" class="btn btn-primary">Retour à la liste des bandes</a>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
                         <form action="{{ route('slider.update', $slider) }}" method="post" enctype="multipart/form-data">
                             @method('PUT')
                             @csrf
-                            <h4 class="text-warning">Slider Image Status Bar</h4>
+                            <h4 class="text-warning">Barre d'image de la bande</h4>
                             <hr ><hr>
                             <div class="form-group mb-4">
                                 <div class="form-check form-switch">
                                     <input class="form-check-input" type="checkbox"
                                     id="status" name="slider_status" value="1" {{ $slider->slider_status == 1 ? 'checked': '' }}>
-                                    <label class="form-check-label" for="status">Active Status</label>
+                                    <label class="form-check-label" for="status">Statut actif</label>
                                 </div>
                             </div>
-                            <h4 class="text-warning">Slider Image Information</h4>
+                            <h4 class="text-warning">Informations sur l'image de la bande</h4>
                             <hr><hr>
                             <div class="form-group">
-                                <h5>Slider Name <span class="text-danger">*</span></h5>
+                                <h5>Bande Nom <span class="text-danger">*</span></h5>
                                 <div class="controls">
                                     <input type="text" name="slider_name" value="{{ old('slider_name', $slider->slider_name) }}"
-                                    class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
+                                    class="form-control" required="" data-validation-required-message="Ce champ est obligatoire"> <div class="help-block"></div>
                                 </div>
                                 @error('slider_name')
                                     <span class="alert text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <h5>Slider Title <span class="text-danger"></span></h5>
+                                <h5>Titre de la bande <span class="text-danger"></span></h5>
                                 <div class="controls">
                                     <input type="text" name="slider_title" value="{{ old('slider_title', $slider->slider_title) }}"
                                     class="form-control">
@@ -53,7 +53,7 @@
                                 @enderror
                             </div>
                                 <div class="form-group">
-                                    <h5>Slider Description<span class="text-danger"></span></h5>
+                                    <h5>Bande Description<span class="text-danger"></span></h5>
                                     <div class="controls">
                                         <textarea name="slider_description" id="editor5" cols="30" rows="5" class="form-control">value="{{ old('slider_description', $slider->slider_description) }}</textarea>
                                         <div class="help-block"></div>
@@ -63,12 +63,12 @@
                                     @enderror
                                 </div>
 
-                            <h4 class="text-warning">Slider Single Image Upload</h4>
+                            <h4 class="text-warning">Téléchargement d'image unique du bande</h4>
                             <hr><hr>
                             <div class="form-group">
-                                <h5>Slider Image <span class="text-danger">*</span></h5>
+                                <h5>Bande Image <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                    <input type="file" name="slider_image" class="form-control" required="" data-validation-required-message="This field is required"
+                                    <input type="file" name="slider_image" class="form-control" required="" data-validation-required-message="Ce champ est obligatoire"
                                     onchange="sliderShow(this)"> <div class="help-block"></div>
                                 </div>
                                 @error('slider_image')
@@ -77,7 +77,7 @@
                                 <img src="" id="sliderImage" alt="">
                             </div>
                             <div class="text-xs-right">
-                                <button type="submit" class="btn btn-rounded btn-info">Submit</button>
+                                <button type="submit" class="btn btn-rounded btn-info">Soumettre</button>
                             </div>
                         </form>
                     </div>

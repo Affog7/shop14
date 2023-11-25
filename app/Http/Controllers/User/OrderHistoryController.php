@@ -11,7 +11,14 @@ class OrderHistoryController extends Controller
 {
     public function orderHistory()
     {
-        $orders = Order::where('user_id', Auth::id())->orderBy('id', 'DESC')->get();
+        $orders = self::orderHistoryDefault(Auth::id());
         return view('frontend.order.order-history', compact('orders'));
     }
+
+    public static function orderHistoryDefault($id)
+    {
+        $orders = Order::where('user_id', $id)->orderBy('id', 'DESC')->get();
+        return $orders;
+    }
+
 }

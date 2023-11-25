@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\CODController;
 use App\Http\Controllers\Backend\CouponController;
 use App\Http\Controllers\Backend\OrderController;
+use App\Http\Controllers\Backend\CLientController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\ShippingAreaController;
 use App\Http\Controllers\Backend\ShippingDistrictController;
@@ -25,6 +26,7 @@ use App\Http\Controllers\Frontend\LanguageController;
 use App\Http\Controllers\User\OrderDetailsController;
 use App\Http\Controllers\User\OrderHistoryController;
 use App\Http\Controllers\User\WishlistController;
+use App\Http\Controllers\MessagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +40,10 @@ use App\Http\Controllers\User\WishlistController;
 */
 // Frontend customer/user logout, profile, change password routes
 
+Route::get('/qr-code', function () {
+    return \QrCode::size(120)
+        ->generate('https://postsrc.com');
+});
 
 Route::middleware(['auth:web'])->group(function(){
 
@@ -191,6 +197,16 @@ Route::middleware(['auth:admin'])->group(function(){
         Route::get('/division/district/ajax/{division_id}', [ShippingStateController::class, 'getDistrict']);
         Route::get('/district/state/ajax/{district_id}', [ShippingStateController::class, 'getState']);
 
+        // Clients routes
+        Route::resource('/clients',CLientController::class);
+        Route::get('/client/edit/{id}',[CLientController::class,'edit'])->name('client.edit');
+        Route::get('/changeclientstatus', [CLientController::class, 'changeClientStatus'])->name('change-client-status');
+        Route::get('/orders/clients/{id}', [CLientController::class, 'showOrderByClient'])->name('client.orders');
+
+
+        //Messages
+        Route::post('/message/admin', [MessagesController::class, 'store'])->name('save.message_admin');
+        Route::post('/message/client', [MessagesController::class, 'store_client'])->name('save.message_client');
 
         // Orders routes
         Route::resource('/orders', OrderController::class);

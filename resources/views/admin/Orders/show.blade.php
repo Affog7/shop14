@@ -11,37 +11,37 @@
             <div class="col-md-6 col-lg-6">
                 <div class="box box-bordered border-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Shipping Details</h3>
+                        <h3 class="box-title">Les détails d'expédition</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
                         <table class="table">
                             <tr>
-                                <th> Shipping Name : </th>
+                                <th> Nom pour la livraison : </th>
                                 <th> {{ $order->name }} </th>
                             </tr>
                             <tr>
-                                <th> Shipping Phone : </th>
+                                <th> Téléphone d'expédition : </th>
                                 <th> {{ $order->phone }} </th>
                             </tr>
                             <tr>
-                                <th> Shipping Email : </th>
+                                <th> E-mail d'expédition : </th>
                                 <th> {{ $order->email }} </th>
                             </tr>
                             <tr>
-                                <th> Division : </th>
+                                <th> Région : </th>
                                 <th> {{ $order->division->division_name }} </th>
                             </tr>
                             <tr>
-                                <th> District : </th>
+                                <th> Département : </th>
                                 <th> {{ $order->district->district_name }} </th>
                             </tr>
                             <tr>
-                                <th> State : </th>
+                                <th> Ville : </th>
                                 <th>{{ $order->state->state_name }} </th>
                             </tr>
                             <tr>
-                                <th> Post Code : </th>
+                                <th> Code postal : </th>
                                 <th> {{ $order->post_code }} </th>
                             </tr>
                             <tr>
@@ -58,22 +58,22 @@
             <div class="col-md-6 col-lg-6">
                 <div class="box box-bordered border-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Order Details</h3>
-                        <span class="text-danger"> Invoice : {{ $order->invoice_number }}</span>
+                        <h3 class="box-title">détails de la commande</h3>
+                        <span class="text-danger"> Facture : {{ $order->invoice_number }}</span>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
                         <table class="table">
                             <tr>
-                                <th> Name : </th>
+                                <th> Nom : </th>
                                 <th> {{ $order->user->name }} </th>
                             </tr>
                             <tr>
-                                <th> Phone : </th>
+                                <th> Téléphone : </th>
                                 <th> {{ $order->user->phone }} </th>
                             </tr>
                             <tr>
-                                <th> Payment Type : </th>
+                                <th> Type de paiement : </th>
                                 <th> {{ $order->payment_method }} </th>
                             </tr>
                             <tr>
@@ -81,7 +81,7 @@
                                 <th> {{ $order->transaction_id }} </th>
                             </tr>
                             <tr>
-                                <th> Invoice : </th>
+                                <th> Facture : </th>
                                 <th class="text-danger"> {{ $order->invoice_number }} </th>
                             </tr>
                             <tr>
@@ -89,45 +89,45 @@
                                 <th>$ {{ $order->amount }} </th>
                             </tr>
                             <tr>
-                                <th> Status : </th>
+                                <th> Statut : </th>
                                 <th>
                                     <span class="badge badge-success">{{ $order->status }}
                                     </span>
                                 </th>
                             </tr>
                             <tr>
-                                <th>Return Reason: <p>{{ $order->return_reason }}</p></th>
+                                <th> Raison de retour: <p>{{ $order->return_reason }}</p></th>
                                 <th>
                                     @if ($order->status == 'En vérification')
                                     <a href="{{ route('order-status.update', [
                                         'order_id' => $order->id,
                                         'status' => 'confirmed'
-                                    ]) }}" class="btn btn-block btn-success">Confirm Commande</a>
+                                    ]) }}" class="btn btn-block btn-success">Commande Confirmée</a>
                                     @elseif ($order->status == 'confirmed')
                                     <a href="{{ route('order-status.update', [
                                         'order_id' => $order->id,
                                         'status' => 'En cours'
-                                    ]) }}" class="btn btn-block btn-success">Process Commande</a>
+                                    ]) }}" class="btn btn-block btn-success"> Commande en cours</a>
                                     @elseif ($order->status == 'En cours')
                                     <a href="{{ route('order-status.update', [
                                         'order_id' => $order->id,
                                         'status' => 'Prise'
-                                    ]) }}" class="btn btn-block btn-success">Pick Commande</a>
+                                    ]) }}" class="btn btn-block btn-success"> Commande prise</a>
                                     @elseif ($order->status == 'Prise')
                                     <a href="{{ route('order-status.update', [
                                         'order_id' => $order->id,
                                         'status' => 'expédiée'
-                                    ]) }}" class="btn btn-block btn-success">Ship Commande</a>
+                                    ]) }}" class="btn btn-block btn-success"> Commande expédiée</a>
                                     @elseif ($order->status == 'expédiée')
                                     <a href="{{ route('order-status.update', [
                                         'order_id' => $order->id,
                                         'status' => 'livrée'
-                                    ]) }}" class="btn btn-block btn-success">Deliverd Commande</a>
+                                    ]) }}" class="btn btn-block btn-success"> Commande livrée</a>
                                     @elseif ($order->status == 'cancel')
                                     <a href="{{ route('order-status.update', [
                                         'order_id' => $order->id,
                                         'status' => 'retournée'
-                                    ]) }}" class="btn btn-block btn-danger">Return Commande</a>
+                                    ]) }}" class="btn btn-block btn-danger"> Commande retournée</a>
                                     @endif
                                 </th>
                             </tr>
@@ -138,10 +138,10 @@
                 <!-- /.box -->
             </div>
             <!-- /.col -->
-            <div class="col-md-12 col-lg-12">
+            <div class="col-md-8 col-lg-8">
                 <div class="box box-bordered border-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Order View</h3>
+                        <h3 class="box-title">Vue de la commande</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -153,25 +153,25 @@
                                             <label for=""> Image</label>
                                         </td>
                                         <td class="text-dark">
-                                            <label for=""> Product Name </label>
+                                            <label for=""> Nom de produit </label>
                                         </td>
                                         <td class="text-dark">
-                                            <label for=""> Product Code</label>
+                                            <label for="">Code produit</label>
                                         </td>
                                         <td class="text-dark">
-                                            <label for=""> Color </label>
+                                            <label for=""> Couleur </label>
                                         </td>
                                         <td class="text-dark">
-                                            <label for=""> Size </label>
+                                            <label for=""> Taille </label>
                                         </td>
                                         <td class="text-dark">
-                                            <label for=""> Quantity </label>
+                                            <label for=""> Quantité </label>
                                         </td>
                                         <td class="text-dark">
-                                            <label for=""> Price </label>
+                                            <label for=""> Prix </label>
                                         </td>
                                         <td class="text-dark">
-                                            <label for=""> Download </label>
+                                            <label for=""> Télécharger </label>
                                         </td>
                                     </tr>
                                     @foreach ($orderItems as $item)
@@ -207,14 +207,14 @@
                                                 @if ($order->status == 'En vérification')
                                                     <strong>
                                                         <span class="badge badge-pill badge-success" style="background: #418DB9;"> No
-                                                            File</span> </strong>
+                                                            Fichier</span> </strong>
 
                                                 @elseif($order->status == 'confirm')
 
                                                     <a target="_blank" href="{{ asset('upload/pdf/' . $file->digital_file) }}">
                                                         <strong>
                                                             <span class="badge badge-pill badge-success" style="background: #FF0000;">
-                                                                Download Ready</span> </strong> </a>
+                                                               Télécharger prêt</span> </strong> </a>
                                                 @endif
                                             </td>
                                         </tr>
@@ -226,6 +226,11 @@
                     <!-- /.box-body -->
                 </div>
                 <!-- /.box -->
+            </div>
+            <div class="col-md-4 col-lg-4">
+                @include('admin.widgets.messages.wmessage',[
+                    'type' => 'admin'
+                    ])
             </div>
             <!-- /.col -->
         </div>

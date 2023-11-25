@@ -18,7 +18,7 @@ class AdminProfileController extends Controller
      */
     public function index()
     {
-        $adminData = Admin::find(1);
+         $adminData = Admin::find(1);
         return view('admin.Profile.index', compact('adminData'));
     }
 

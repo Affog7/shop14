@@ -50,6 +50,15 @@
           <!-- {{-- <img src="" alt="" width="150"/> --}} -->
           <h2 style="color: green; font-size: 26px;"><strong>{{ env('APP_NAME') }}</strong></h2>
         </td>
+        <td align="right"> 
+            @php        
+              $qrCode = QrCode::size(80)->generate($order->invoice_number);
+            @endphp
+          <div style="text-">  
+            <img src="data:image/png;base64,{{ base64_encode($qrCode) }}" alt="QR Code">
+          </div>  
+             
+        </td>
         <td align="right">
             <pre class="font" >
                {{ env('APP_NAME') }}
@@ -95,6 +104,10 @@
     </tr>
   </table>
   <br/>
+
+
+
+  <br>
 <h3>Products</h3>
 
 

@@ -4,7 +4,7 @@
     @include('admin.dashboard_layout.breadcrumb', [
     'name' => 'Coupon',
     'url' => "coupons.index",
-    'section_name' => 'Tout coupon'
+    'section_name' => 'Tous les Coupons'
     ])
     <section class="content">
         <div class="row">
@@ -22,7 +22,7 @@
                             <div class="form-group">
                                 <h5>Nom de coupon <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                    <input type="text" name="coupon_name" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
+                                    <input type="text" name="coupon_name" class="form-control" required="" data-validation-required-message="Ce champ est obligatoire"> <div class="help-block"></div>
                                 </div>
                                 @error('coupon_name')
                                     <span class="alert text-danger">{{ $message }}</span>
@@ -31,7 +31,7 @@
                             <div class="form-group">
                                 <h5>Remise des coupons (%) <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                    <input type="number" name="coupon_discount" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
+                                    <input type="number" name="coupon_discount" class="form-control" required="" data-validation-required-message="Ce champ est obligatoire"> <div class="help-block"></div>
                                 </div>
                                 @error('coupon_discount')
                                     <span class="alert text-danger">{{ $message }}</span>
@@ -40,7 +40,7 @@
                             <div class="form-group">
                                 <h5>Validité du coupon <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                    <input type="date" name="coupon_validity" class="form-control" required="" min="{{ Carbon\Carbon::now()->format('Y-m-d') }}" data-validation-required-message="This field is required"> <div class="help-block"></div>
+                                    <input type="date" name="coupon_validity" class="form-control" required="" min="{{ Carbon\Carbon::now()->format('Y-m-d') }}" data-validation-required-message="Ce champ est obligatoire"> <div class="help-block"></div>
                                 </div>
                                 @error('coupon_validity')
                                     <span class="alert text-danger">{{ $message }}</span>

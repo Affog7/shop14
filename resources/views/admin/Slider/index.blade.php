@@ -11,8 +11,8 @@
             <div class="col-md-12 col-lg-12">
                 <div class="box">
                     <div class="box-header with-border d-flex justify-content-between align-items-center">
-                        <h3 class="box-title">All Slider Data Table</h3>
-                        <a href="{{ route('slider.create') }}" class="btn btn-primary">Create New Slider</a>
+                        <h3 class="box-title"> TABLE DE DONNÉES DES BANDES</h3>
+                        <a href="{{ route('slider.create') }}" class="btn btn-primary">Créer une nouvelle bande</a>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -25,11 +25,11 @@
                                             <thead>
                                                 <tr role="row">
                                                     <th>#</th>
-                                                    <th>Slider Image</th>
-                                                    <th>Slider Name</th>
-                                                    <th>Slider Title</th>
-                                                    <th>Slider Status</th>
-                                                    <th>Action</th>
+                                                    <th>Image Glissière(Bande) </th>
+                                                    <th>Nom Glissière(bande) </th>
+                                                    <th>Titre Glissière(bande) </th>
+                                                    <th>Statut Glissière(bande)</th>
+                                                    <th>Action(bande)</th>
                                                 </tr>
                                             </thead>
                                             <tbody>

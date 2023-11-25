@@ -12,7 +12,7 @@
                 <div class="box">
                     <div class="box-header with-border d-flex justify-content-between align-items-center">
                         <h3 class="box-title">TOUTE TABLEAU DE DONNÉES PRODUIT</h3>
-                        <a href="{{ route('products.create') }}" class="btn btn-primary">Create New Product</a>
+                        <a href="{{ route('products.create') }}" class="btn btn-primary">Créer un nouveau produit</a>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
